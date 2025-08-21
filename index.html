@@ -1,4 +1,4 @@
-Subel<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="utf-8" />
@@ -10,7 +10,7 @@ Subel<!DOCTYPE html>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -30,6 +30,17 @@ Subel<!DOCTYPE html>
             color: var(--text);
             background-color: var(--bg);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #0056b3;
         }
 
         .container {
@@ -117,6 +128,7 @@ Subel<!DOCTYPE html>
             padding: 1.5rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
         }
         
         .card:hover {
@@ -174,6 +186,86 @@ Subel<!DOCTYPE html>
             font-weight: 600;
         }
         
+        .service-icon {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--card);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            background-color: #e2e4e7;
+        }
+        
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            fill: var(--text);
+        }
+
+        /* --- Slider Styles --- */
+        .slider-container {
+            width: 100%;
+            max-width: 800px; /* Adjust max-width as needed */
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slider img {
+            width: 100%;
+            display: block;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .slider-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slider-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -205,89 +297,138 @@ Subel<!DOCTYPE html>
     <main class="container">
         <section class="hero">
             <h1>লক্ষ্মীপুর সদর — সব সেবা এক জায়গায়</h1>
+            <div class="slider-container">
+                <div class="slider" id="imageSlider">
+                    </div>
+                <div class="slider-controls">
+                    <button onclick="changeSlide(-1)">পূর্ববর্তী</button>
+                    <button onclick="changeSlide(1)">পরবর্তী</button>
+                </div>
+            </div>
             <p>জরুরি সহায়তা, সরকারি/বেসরকারি সেবা, আপডেট, মানচিত্র ও যোগাযোগ। এই সাইটটি অফলাইন-ফ্রেন্ডলি এবং মোবাইল-ফার্স্ট ডিজাইনে তৈরি।</p>
         </section>
 
         <section id="emergency" class="section">
             <h2 class="section-title">জরুরি নম্বর</h2>
-            <div class="emergency-grid">
-                <div class="card emergency-item">
-                    <div>
-                        <div class="badge">জাতীয়</div>
-                        <h4>জাতীয় জরুরি সেবা</h4>
-                        <p>পুলিশ, ফায়ার সার্ভিস, অ্যাম্বুলেন্স</p>
-                    </div>
-                    <a href="tel:999">কল করুন 999</a>
+            <div class="emergency-grid" id="emergency-list">
                 </div>
-                <div class="card emergency-item">
-                    <div>
-                        <div class="badge">জাতীয়</div>
-                        <h4>সরকারি তথ্য ও সেবা</h4>
-                        <p>সিটিজেন সার্ভিস</p>
-                    </div>
-                    <a href="tel:333">কল করুন 333</a>
-                </div>
-                <div class="card emergency-item">
-                    <div>
-                        <div class="badge">জাতীয়</div>
-                        <h4>নারী ও শিশু সহায়তা</h4>
-                        <p>হেল্পলাইন</p>
-                    </div>
-                    <a href="tel:109">কল করুন 109</a>
-                </div>
-                <div class="card emergency-item">
-                    <div>
-                        <div class="badge">জাতীয়</div>
-                        <h4>টোল-ফ্রি স্বাস্থ্য সেবা</h4>
-                        <p>স্বাস্থ্য মন্ত্রণালয়</p>
-                    </div>
-                    <a href="tel:16263">কল করুন 16263</a>
-                </div>
-            </div>
         </section>
         
         <section id="services">
             <h2 class="section-title">প্রধান সেবা</h2>
-            <div class="grid-container">
-                <div class="card">
-                   <a href="#স্বাস্থ্য_সেবা_পাতার_লিংক_দিন">
-    <div class="card">
-        <h4>🏥 স্বাস্থ্য সেবা</h4>
-        <p>হাসপাতাল, ক্লিনিক, ফার্মেসি, অ্যাম্বুলেন্স</p>
-    </div>
-</a>
-                <div class="card">
-                    <h4>👮‍♂️ নিরাপত্তা ও আইন</h4>
-                    <p>থানা, বিট পুলিশিং, ট্রাফিক</p>
+            <div class="grid-container" id="service-list">
                 </div>
-                <div class="card">
-                    <h4>🔥 দুর্যোগ ব্যবস্থাপনা</h4>
-                    <p>ফায়ার সার্ভিস, সিভিল ডিফেন্স</p>
-                </div>
-                <div class="card">
-                    <h4>🏛️ সরকারি ও প্রশাসনিক</h4>
-                    <p>ইউনিয়ন পরিষদ, পাসপোর্ট, জন্ম নিবন্ধন</p>
-                </div>
-                <div class="card">
-                    <h4>💡 ইউটিলিটি সার্ভিস</h4>
-                    <p>বিদ্যুৎ, গ্যাস, পানি</p>
-                </div>
-                <div class="card">
-                    <h4>🩸 রক্তদান</h4>
-                    <p>ডোনার গ্রুপ, সংগঠন</p>
-                </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">যোগাযোগ</h2>
+            <p style="text-align: center; color: var(--muted);">আমাদের সাথে যোগাযোগ রাখতে বা যেকোনো তথ্যের জন্য, নিচের প্ল্যাটফর্মগুলোতে আমাদের অনুসরণ করুন:</p>
+            <div class="social-grid">
+                <a href="https://www.facebook.com/your-facebook-page" target="_blank" aria-label="Facebook Page" class="social-link">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 5.016 3.65 9.172 8.441 9.873V15.908h-2.996V12.022h2.996V9.11c0-2.956 1.83-4.568 4.69-4.568 1.34 0 2.495.24 2.835.342v3.003h-1.87c-1.464 0-1.748.694-1.748 1.716v2.24h3.336l-.434 3.886h-2.902V21.873A9.998 9.998 0 0022 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/your-whatsapp-number" target="_blank" aria-label="WhatsApp" class="social-link">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.558.455 3.013 1.258 4.275l-1.07 3.896 4.045-1.054A9.95 9.95 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm3.328 13.918c-.08-.135-.291-.215-.615-.369a1.59 1.59 0 00-.518-.184c-.035-.008-.069-.015-.104-.025s-.088-.016-.176-.021c-.415-.027-.864-.108-1.288-.23c-1.432-.416-2.52-1.63-2.73-1.898-.21-.267-.534-.645-.534-1.26a1.055 1.055 0 01.327-.852c.218-.215.345-.33.468-.432.122-.102.245-.205.394-.36c.149-.155.308-.344.426-.45.118-.106.26-.207.394-.326a.637.637 0 00.129-.126c.038-.052.076-.11.114-.165s.069-.11.096-.164a.897.897 0 00.155-.382.72.72 0 00.063-.338c-.027-.13-.18-.328-.35-.49a1.696 1.696 0 00-.472-.375c-.157-.088-.32-.158-.456-.238-.136-.08-.283-.16-.408-.25a.862.862 0 00-.238-.168c-.149-.079-.272-.119-.408-.119s-.25.04-.373.18-.218.423-.335.568-.204.417-.306.666-.184.502-.275.698a4.113 4.113 0 00-.333.785.495.495 0 01-.118.23c.032.14.076.27.129.412a5.55 5.55 0 00.278.683c.18.29.382.57.6.848.218.277.456.556.713.84c.258.283.528.563.81.82a7.12 7.12 0 00.95.836c.266.19.51.348.74.475.23.127.425.21.6.21.098 0 .19-.009.28-.028.188-.04.457-.123.754-.337.297-.214.485-.436.6-.582.115-.145.244-.306.402-.455.158-.15.36-.31.545-.455s.37-.28.55-.42a.576.576 0 01.129-.092c.04-.02.08-.036.12-.055s.063-.028.08-.035c.017-.007.034-.012.05-.018z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/your-instagram-profile" target="_blank" aria-label="Instagram Profile" class="social-link">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.75 2 8.334 2.016 7.025 2.073A5.432 5.432 0 003.528 3.528a5.432 5.432 0 00-1.554 3.497C2.016 8.334 2 8.75 2 12c0 3.25.016 3.666.073 4.975a5.432 5.432 0 001.455 3.497c.915.915 2.082 1.455 3.497 1.554C8.334 21.984 8.75 22 12 22s3.666-.016 4.975-.073a5.432 5.432 0 003.497-1.554c.915-.915 1.455-2.082 1.554-3.497.057-1.309.073-1.725.073-4.975s-.016-3.666-.073-4.975a5.432 5.432 0 00-1.455-3.497A5.432 5.432 0 0016.975 2.073C15.666 2.016 15.25 2 12 2zm0 2c3.211 0 3.585.012 4.85.072 1.258.058 2.03.54 2.628 1.139s1.082 1.37 1.14 2.628c.06 1.265.072 1.639.072 4.85s-.012 3.585-.072 4.85c-.058 1.258-.54 2.03-1.139 2.628s-1.37 1.082-2.628 1.14c-1.265.06-1.639.072-4.85.072s-3.585-.012-4.85-.072c-1.258-.058-2.03-.54-2.628-1.139s-1.082-1.37-1.14-2.628c-.06-1.265-.072-1.639-.072-4.85s.012-3.585.072-4.85c.058-1.258.54-2.03 1.139-2.628s1.37-1.082 2.628-1.14c1.265-.06 1.639-.072 4.85-.072zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm6.5-3a1 1 0 100 2 1 1 0 000-2z" fill="currentColor"/>
+                    </svg>
+                </a>
             </div>
         </section>
     </main>
     
     <footer>
-        <p>&copy; <span id="year"></span> লক্ষ্মীপুর সদর তথ্য পোর্টাল • নির্মাণ সহায়তা: Ahmed Subel</p>
+        <p>&copy; <span id="year"></span> লক্ষ্মীপুর সদর তথ্য পোর্টাল • নির্মাণ সহায়তা: আপনার টিম</p>
     </footer>
 
     <script>
+        // --- ডেটা অংশ: আপনি শুধুমাত্র নিচের এই অংশটি এডিট করবেন ---
+        
+        const EMERGENCY_NUMBERS = [
+            { title: 'জাতীয় জরুরি সেবা', phone: '999', type: 'জাতীয়', note: 'পুলিশ, ফায়ার সার্ভিস, অ্যাম্বুলেন্স' },
+            { title: 'সরকারি তথ্য ও সেবা', phone: '333', type: 'জাতীয়', note: 'সিটিজেন সার্ভিস' },
+            { title: 'নারী ও শিশু সহায়তা', phone: '109', type: 'জাতীয়', note: 'হেল্পলাইন' },
+            { title: 'টোল-ফ্রি স্বাস্থ্য সেবা', phone: '16263', type: 'জাতীয়', note: 'স্বাস্থ্য মন্ত্রণালয়' },
+        ];
+
+        const SERVICES = [
+            { icon: '🏥', title: 'স্বাস্থ্য সেবা', description: 'হাসপাতাল, ক্লিনিক, ফার্মেসি, অ্যাম্বুলেন্স' },
+            { icon: '👮‍♂️', title: 'নিরাপত্তা ও আইন', description: 'থানা, বিট পুলিশিং, ট্রাফিক' },
+            { icon: '🔥', title: 'দুর্যোগ ব্যবস্থাপনা', description: 'ফায়ার সার্ভিস, সিভিল ডিফেন্স' },
+            { icon: '🏛️', title: 'সরকারি ও প্রশাসনিক', description: 'ইউনিয়ন পরিষদ, পাসপোর্ট, জন্ম নিবন্ধন' },
+            { icon: '💡', title: 'ইউটিলিটি সার্ভিস', description: 'বিদ্যুৎ, গ্যাস, পানি' },
+            { icon: '🩸', title: 'রক্তদান', description: 'ডোনার গ্রুপ, সংগঠন' },
+        ];
+
+        // --- স্লাইডারের জন্য ছবির তালিকা ---
+        const SLIDER_IMAGES = [
+            'https://github.com/ahmedsubel342/lakshmipur-portal/blob/main/1000129802.jpg',
+            'https://github.com/ahmedsubel342/lakshmipur-portal/blob/main/1000132024.jpg',
+            'https://github.com/ahmedsubel342/lakshmipur-portal/blob/main/1000190848.jpg',
+            // এখানে আপনার ছবির লিংক যোগ করতে পারেন:
+            // 'https://example.com/your-image-4.jpg',
+            // 'https://example.com/your-image-5.png'
+        ];
+
+        // --- জাভাস্ক্রিপ্ট লজিক: এই অংশটি এডিট করার প্রয়োজন নেই ---
+        let currentSlide = 0;
+        const slider = document.getElementById('imageSlider');
+        
+        function renderSliderImages() {
+            slider.innerHTML = SLIDER_IMAGES.map(src => `
+                <img src="${src}" alt="স্লাইডারের ছবি" style="width: 100%;">
+            `).join('');
+            updateSliderPosition();
+        }
+
+        function updateSliderPosition() {
+            slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + SLIDER_IMAGES.length) % SLIDER_IMAGES.length;
+            updateSliderPosition();
+        }
+
+        function renderEmergencyNumbers() {
+            const listContainer = document.getElementById('emergency-list');
+            listContainer.innerHTML = EMERGENCY_NUMBERS.map(item => `
+                <div class="card emergency-item">
+                    <div>
+                        <div class="badge">${item.type}</div>
+                        <h4>${item.title}</h4>
+                        <p>${item.note}</p>
+                    </div>
+                    <a href="tel:${item.phone}">কল করুন ${item.phone}</a>
+                </div>
+            `).join('');
+        }
+
+        function renderServices() {
+            const listContainer = document.getElementById('service-list');
+            listContainer.innerHTML = SERVICES.map(item => `
+                <div class="card">
+                    <div class="service-icon">${item.icon}</div>
+                    <h4>${item.title}</h4>
+                    <p>${item.description}</p>
+                </div>
+            `).join('');
+        }
+
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Render all content on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderEmergencyNumbers();
+            renderServices();
+            renderSliderImages();
+        });
     </script>
 </body>
-
 </html>
-
