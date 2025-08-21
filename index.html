@@ -1,452 +1,541 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>লক্ষ্মীপুর সদর তথ্য পোর্টাল</title>
-    <meta name="description" content="লক্ষ্মীপুর সদর উপজেলার জরুরি নম্বর, সেবা, আপডেট, মানচিত্র ও যোগাযোগ—সব এক জায়গায়।" />
-    <meta name="theme-color" content="#0ea5e9" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect rx='10' ry='10' width='48' height='48' fill='%230ea5e9'/%3E%3Cpath fill='white' d='M24 8a14 14 0 100 28 14 14 0 000-28zm0 4a10 10 0 110 20 10 10 0 010-20zm-2 5h4v12h-4V17zm0 14h4v4h-4v-4z'/%3E%3C/svg%3E" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #f0f2f5;
-            --panel: #ffffff;
-            --muted: #6c757d;
-            --text: #212529;
-            --accent: #007bff;
-            --accent-dark: #0056b3;
-            --accent2: #28a745;
-            --warn: #dc3545;
-            --card: #e9ecef;
-        }
 
-        body {
-            margin: 0;
-            font-family: 'Noto Sans Bengali', 'Poppins', sans-serif;
-            color: var(--text);
-            background-color: var(--bg);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        a:hover {
-            color: var(--accent-dark);
-        }
+     <title>Eatery Cafe and Restaurant Template</title>
+<!-- 
 
-        .container {
-            width: min(1200px, 95%);
-            margin-inline: auto;
-            padding: 1.5rem 1rem;
-        }
+Eatery Cafe Template 
 
-        header.nav {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.75rem 1rem;
-        }
+http://www.templatemo.com/tm-515-eatery
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            font-size: 1.25rem;
-            color: var(--accent);
-        }
+-->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        .brand .logo {
-            width: 40px;
-            height: 40px;
-        }
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/magnific-popup.css">
 
-        .cta {
-            background-color: var(--accent);
-            color: white;
-            border: 0;
-            padding: 0.75rem 1.25rem;
-            border-radius: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-        }
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/templatemo-style.css">
 
-        .cta:hover {
-            transform: translateY(-2px);
-            background-color: var(--accent-dark);
-        }
-
-        main {
-            padding-top: 2rem;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 4rem 1rem 2rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin: 0;
-            line-height: 1.2;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--accent), #00c6ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--muted);
-            max-width: 600px;
-            margin: 1rem auto;
-        }
-
-        .card {
-            background-color: var(--panel);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-align: center;
-            text-decoration: none; 
-            display: block;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            font-weight: 600;
-        }
-        
-        .grid-container {
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            margin-top: 1.5rem;
-        }
-        
-        .badge {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* --- Slider Styles --- */
-        .slider-container {
-            width: 100%;
-            max-width: 900px;
-            height: 450px;
-            margin: 2rem auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .slider {
-            display: flex;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-        
-        .slider img {
-            min-width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .slider-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 1rem;
-            box-sizing: border-box;
-            z-index: 10;
-        }
-        
-        .slider-controls button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .slider-controls button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        /* --- Other sections styles --- */
-        .text-content {
-            text-align: justify;
-        }
-        
-        .list-item {
-            background-color: var(--panel);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .list-item h4 { margin: 0 0 0.5rem 0; }
-        .list-item p { margin: 0; color: var(--muted); }
-        .list-item a { display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: var(--accent2); color: white; border-radius: 8px; }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            color: var(--muted);
-            margin-top: 3rem;
-        }
-    </style>
 </head>
 <body>
-    <header class="nav" aria-label="প্রধান নেভিগেশন">
-        <div class="nav-inner container">
-            <a href="#" class="brand">
-                <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" fill="currentColor"/>
-                </svg>
-                <span>লক্ষ্মীপুর সদর পোর্টাল</span>
-            </a>
-            <a href="https://github.com/ahmedsubel342/lakshmipur-portal" class="cta">GitHub ↗</a>
-        </div>
-    </header>
 
-    <main class="container">
-        <section class="hero">
-            <h1>লক্ষ্মীপুর সদর — সব সেবা এক জায়গায়</h1>
-            <p>জরুরি সহায়তা, সরকারি/বেসরকারি সেবা, আপডেট, মানচিত্র ও যোগাযোগ। এই সাইটটি অফলাইন-ফ্রেন্ডলি এবং মোবাইল-ফার্স্ট ডিজাইনে তৈরি।</p>
-            <div class="slider-container">
-                <div class="slider" id="imageSlider">
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">Eatery <span>.</span> Cafe</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="#home" class="smoothScroll">Home</a></li>
+                         <li><a href="#about" class="smoothScroll">About</a></li>
+                         <li><a href="#team" class="smoothScroll">Chef</a></li>
+                         <li><a href="#menu" class="smoothScroll">Menu</a></li>
+                         <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
+                         <a href="#footer" class="section-btn">Reserve a table</a>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="row">
+
+                    <div class="owl-carousel owl-theme">
+                         <div class="item item-first">
+                              <div class="caption">
+                                   <div class="container">
+                                        <div class="col-md-8 col-sm-12">
+                                             <h3>Eatery Cafe &amp; Restaurant</h3>
+                                             <h1>Our mission is to provide an unforgettable experience</h1>
+                                             <a href="#team" class="section-btn btn btn-default smoothScroll">Meet our chef</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="item item-second">
+                              <div class="caption">
+                                   <div class="container">
+                                        <div class="col-md-8 col-sm-12">
+                                             <h3>Your Perfect Breakfast</h3>
+                                             <h1>The best dinning quality can be here too!</h1>
+                                             <a href="#menu" class="section-btn btn btn-default smoothScroll">Discover menu</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="item item-third">
+                              <div class="caption">
+                                   <div class="container">
+                                        <div class="col-md-8 col-sm-12">
+                                             <h3>New Restaurant in Town</h3>
+                                             <h1>Enjoy our special menus every Sunday and Friday</h1>
+                                             <a href="#contact" class="section-btn btn btn-default smoothScroll">Reservation</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
                     </div>
-                <div class="slider-controls">
-                    <button onclick="changeSlide(-1)">❮</button>
-                    <button onclick="changeSlide(1)">❯</button>
-                </div>
-            </div>
-        </section>
 
-        <section id="emergency" class="section">
-            <h2 class="section-title">জরুরি নম্বর</h2>
-            <div class="grid-container" id="emergency-list">
-                </div>
-        </section>
+          </div>
+     </section>
 
-        <section id="services">
-            <h2 class="section-title">প্রধান সেবা</h2>
-            <div class="grid-container" id="service-list">
-                </div>
-        </section>
-        
-        <section id="about" class="section">
-            <h2 class="section-title">আমাদের সম্পর্কে</h2>
-            <div class="card text-content">
-                <p>লক্ষ্মীপুর সদর তথ্য পোর্টালটি লক্ষ্মীপুর সদর উপজেলার সকল মানুষের জন্য একটি ডিজিটাল প্ল্যাটফর্ম হিসেবে কাজ করবে। আমাদের লক্ষ্য হলো জরুরি পরিষেবা, সরকারি ও বেসরকারি প্রতিষ্ঠান, স্বাস্থ্যসেবা, শিক্ষা এবং অন্যান্য প্রয়োজনীয় তথ্য একটি সহজলভ্য জায়গায় নিয়ে আসা। এই পোর্টালটি স্থানীয় মানুষকে দ্রুত ও সঠিক তথ্য দিয়ে সহায়তা করার জন্য ডিজাইন করা হয়েছে।</p>
-            </div>
-        </section>
 
-        <section id="gallery" class="section">
-            <h2 class="section-title">গ্যালারি</h2>
-            <p style="text-align: center; color: var(--muted); max-width: 600px; margin: 1rem auto;">লক্ষ্মীপুর সদরের কিছু সুন্দর মুহূর্ত এবং গুরুত্বপূর্ণ স্থানের ছবি</p>
-            <div class="grid-container" id="gallery-list">
-                </div>
-        </section>
+     <!-- ABOUT -->
+     <section id="about" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
 
-    </main>
-    
-    <footer>
-        <p>&copy; <span id="year"></span> লক্ষ্মীপুর সদর তথ্য পোর্টাল</p>
-    </footer>
+                    <div class="col-md-6 col-sm-12">
+                         <div class="about-info">
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+                                   <h4>Read our story</h4>
+                                   <h2>We've been Making The Delicious Foods Since 1999</h2>
+                              </div>
 
-    <script>
-        // --- ডেটা অংশ: আপনি শুধুমাত্র নিচের এই অংশটি এডিট করবেন ---
-        
-        const EMERGENCY_NUMBERS = [
-            { title: 'জাতীয় জরুরি সেবা', phone: '999', type: 'জাতীয়', note: 'পুলিশ, ফায়ার সার্ভিস, অ্যাম্বুলেন্স' },
-            { title: 'সরকারি তথ্য ও সেবা', phone: '333', type: 'জাতীয়', note: 'সিটিজেন সার্ভিস' },
-            { title: 'নারী ও শিশু সহায়তা', phone: '109', type: 'জাতীয়', note: 'হেল্পলাইন' },
-            { title: 'টোল-ফ্রি স্বাস্থ্য সেবা', phone: '16263', type: 'জাতীয়', note: 'স্বাস্থ্য মন্ত্রণালয়' },
-        ];
+                              <div class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>Fusce hendrerit malesuada lacinia. Donec semper semper sem vitae malesuada. Proin scelerisque risus et ipsum semper molestie sed in nisi. Ut rhoncus congue lectus, rhoncus venenatis leo malesuada id.</p>
+                                   <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about <a href="https://plus.google.com/+templatemo" target="_parent">templatemo</a>. Thank you.</p>
+                              </div>
+                         </div>
+                    </div>
 
-        const SERVICES = [
-            { icon: '🏥', title: 'স্বাস্থ্য সেবা', description: 'হাসপাতাল, ক্লিনিক, অ্যাম্বুলেন্স', items: [
-                { name: 'লক্ষ্মীপুর সদর হাসপাতাল', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' },
-                { name: 'অন্যান্য হাসপাতাল/ক্লিনিক', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-            { icon: '👮‍♂️', title: 'নিরাপত্তা ও আইন', description: 'থানা, ট্রাফিক', items: [
-                { name: 'লক্ষ্মীপুর সদর থানা', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' },
-                { name: 'ট্রাফিক বিভাগ', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-            { icon: '🏛️', title: 'সরকারি ও প্রশাসনিক', description: 'ইউনিয়ন পরিষদ', items: [
-                { name: 'লক্ষ্মীপুর সদর উপজেলা পরিষদ', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' },
-                { name: 'পাসপোর্ট অফিস', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-            { icon: '📚', title: 'শিক্ষা', description: 'স্কুল, কলেজ, মাদ্রাসা', items: [
-                { name: 'লক্ষ্মীপুর সরকারি কলেজ', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' },
-                { name: 'লক্ষ্মীপুর সরকারি বালিকা উচ্চ বিদ্যালয়', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-            { icon: '🛒', title: 'ব্যবসা ও দোকান', description: 'গুরুত্বপূর্ণ ব্যবসা, বাজার', items: [
-                { name: 'সদর উপজেলার গুরুত্বপূর্ণ বাজার', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' },
-                { name: 'অন্যান্য ব্যবসা প্রতিষ্ঠান', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-            { icon: '🔥', title: 'দুর্যোগ ব্যবস্থাপনা', description: 'ফায়ার সার্ভিস', items: [
-                { name: 'ফায়ার সার্ভিস ও সিভিল ডিফেন্স', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-            { icon: '💡', title: 'ইউটিলিটি সার্ভিস', description: 'বিদ্যুৎ, পানি, গ্যাস', items: [
-                { name: 'বিদ্যুৎ অফিস', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-            { icon: '🩸', title: 'রক্তদান', description: 'ডোনার গ্রুপ, সংগঠন', items: [
-                { name: 'লক্ষ্মীপুর রক্তদান গ্রুপ', address: 'আপনার ঠিকানা এখানে দিন', phone: 'আপনার নম্বর এখানে দিন' }
-            ]},
-        ];
+                    <div class="col-md-6 col-sm-12">
+                         <div class="wow fadeInUp about-image" data-wow-delay="0.6s">
+                              <img src="images/about-image.jpg" class="img-responsive" alt="">
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
 
-        // এখানে আপনার স্লাইডারের ছবির লিংকগুলো দিন
-        const SLIDER_IMAGES = [
-            'https://via.placeholder.com/1200x500/007bff/ffffff?text=লক্ষ্মীপুর+সদর+১',
-            'https://via.placeholder.com/1200x500/28a745/ffffff?text=লক্ষ্মীপুর+সদর+২',
-            'https://via.placeholder.com/1200x500/dc3545/ffffff?text=লক্ষ্মীপুর+সদর+৩',
-        ];
-        
-        // এখানে আপনার গ্যালারির ছবির লিংকগুলো দিন
-        const GALLERY_IMAGES = [
-            'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+১',
-            'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+২',
-            'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+৩',
-            'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+৪',
-            'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+৫',
-            'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+৬',
-        ];
 
-        // --- জাভাস্ক্রিপ্ট লজিক: এই অংশটি এডিট করার প্রয়োজন নেই ---
-        let currentSlide = 0;
-        const slider = document.getElementById('imageSlider');
-        
-        function renderSliderImages() {
-            slider.innerHTML = SLIDER_IMAGES.map(src => `
-                <img src="${src}" alt="স্লাইডারের ছবি">
-            `).join('');
-            updateSliderPosition();
-        }
+     <!-- TEAM -->
+     <section id="team" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
 
-        function updateSliderPosition() {
-            slider.style.transform = `translateX(${-currentSlide * 100}%)`;
-        }
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2>Meet our chefs</h2>
+                              <h4>They are nice &amp; friendly</h4>
+                         </div>
+                    </div>
 
-        function changeSlide(direction) {
-            currentSlide = (currentSlide + direction + SLIDER_IMAGES.length) % SLIDER_IMAGES.length;
-            updateSliderPosition();
-        }
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <img src="images/team-image1.jpg" class="img-responsive" alt="">
+                                   <div class="team-hover">
+                                        <div class="team-item">
+                                             <h4>Duis vel lacus id magna mattis vehicula</h4> 
+                                             <ul class="social-icon">
+                                                  <li><a href="#" class="fa fa-linkedin-square"></a></li>
+                                                  <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                             </ul>
+                                        </div>
+                                   </div>
+                         </div>
+                         <div class="team-info">
+                              <h3>New Catherine</h3>
+                              <p>Kitchen Officer</p>
+                         </div>
+                    </div>
 
-        function renderEmergencyNumbers() {
-            const listContainer = document.getElementById('emergency-list');
-            listContainer.innerHTML = EMERGENCY_NUMBERS.map(item => `
-                <div class="card">
-                    <div class="badge">${item.type}</div>
-                    <h4>${item.title}</h4>
-                    <p>${item.note}</p>
-                    <a href="tel:${item.phone}" style="font-weight: 500; color: var(--accent2);">কল করুন ${item.phone}</a>
-                </div>
-            `).join('');
-        }
-        
-        function toggleServiceList(serviceTitle) {
-            const service = SERVICES.find(s => s.title === serviceTitle);
-            if (!service) return;
-            
-            const listContainer = document.getElementById('service-detail-list');
-            listContainer.innerHTML = service.items.map(item => `
-                <div class="list-item">
-                    <h4>${item.name}</h4>
-                    <p>ঠিকানা: ${item.address}</p>
-                    <p>ফোন: ${item.phone}</p>
-                    <a href="tel:${item.phone}">কল করুন</a>
-                </div>
-            `).join('');
-            
-            document.getElementById('service-list').style.display = 'none';
-            document.getElementById('service-details').style.display = 'block';
-            document.getElementById('service-details-title').textContent = service.title;
-        }
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <img src="images/team-image2.jpg" class="img-responsive" alt="">
+                                   <div class="team-hover">
+                                        <div class="team-item">
+                                             <h4>Cras suscipit neque quis odio feugiat</h4>
+                                             <ul class="social-icon">
+                                                  <li><a href="#" class="fa fa-instagram"></a></li>
+                                                  <li><a href="#" class="fa fa-flickr"></a></li>
+                                             </ul>
+                                        </div>
+                                   </div>
+                         </div>
+                         <div class="team-info">
+                              <h3>Lindsay Perlen</h3>
+                              <p>Owner &amp; Manager</p>
+                         </div>
+                    </div>
 
-        function renderServices() {
-            const listContainer = document.getElementById('service-list');
-            listContainer.innerHTML = SERVICES.map(item => `
-                <div class="card" onclick="toggleServiceList('${item.title}')" style="cursor: pointer;">
-                    <div class="service-icon">${item.icon}</div>
-                    <h4>${item.title}</h4>
-                    <p>${item.description}</p>
-                </div>
-            `).join('');
-        }
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <img src="images/team-image3.jpg" class="img-responsive" alt="">
+                                   <div class="team-hover">
+                                        <div class="team-item">
+                                             <h4>Etiam auctor enim tristique faucibus</h4>
+                                             <ul class="social-icon">
+                                                  <li><a href="#" class="fa fa-github"></a></li>
+                                                  <li><a href="#" class="fa fa-google"></a></li>
+                                             </ul>
+                                        </div>
+                                   </div>
+                         </div>
+                         <div class="team-info">
+                              <h3>Isabella Grace</h3>
+                              <p>Pizza Specialist</p>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
 
-        function renderGallery() {
-            const listContainer = document.getElementById('gallery-list');
-            listContainer.innerHTML = GALLERY_IMAGES.map(src => `
-                <div class="card">
-                    <img src="${src}" alt="গ্যালারি ছবি" style="width: 100%; height: auto; border-radius: 8px;">
-                </div>
-            `).join('');
-        }
 
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Render all content on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            renderEmergencyNumbers();
-            renderServices();
-            renderSliderImages();
-            renderGallery();
-        });
-    </script>
+     <!-- MENU-->
+     <section id="menu" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2>Our Menus</h2>
+                              <h4>Tea Time &amp; Dining</h4>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
+                                   <img src="images/menu-image1.jpg" class="img-responsive" alt="">
+
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h3>American Breakfast</h3>
+                                             <p>Tomato / Eggs / Sausage</p>
+                                        </div>
+                                        <div class="menu-price">
+                                             <span>$25</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image2.jpg" class="image-popup" title="Self-made Salad">
+                                   <img src="images/menu-image2.jpg" class="img-responsive" alt="">
+
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h3>Self-made Salad</h3>
+                                             <p>Green / Fruits / Healthy</p>
+                                        </div>
+                                        <div class="menu-price">
+                                             <span>$18</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image3.jpg" class="image-popup" title="Chinese Noodle">
+                                   <img src="images/menu-image3.jpg" class="img-responsive" alt="">
+
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h3>Chinese Noodle</h3>
+                                             <p>Pepper / Chicken / Vegetables</p>
+                                        </div>
+                                        <div class="menu-price">
+                                             <span>$34</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image4.jpg" class="image-popup" title="Rice Soup">
+                                   <img src="images/menu-image4.jpg" class="img-responsive" alt="">
+
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h3>Rice Soup</h3>
+                                             <p>Green / Chicken</p>
+                                        </div>
+                                        <div class="menu-price">
+                                             <span>$28</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image5.jpg" class="image-popup" title="Project title">
+                                   <img src="images/menu-image5.jpg" class="img-responsive" alt="">
+
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h3>Deli Burger</h3>
+                                             <p>Beef / Fried Potatoes</p>
+                                        </div>
+                                        <div class="menu-price">
+                                             <span>$46</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image6.jpg" class="image-popup" title="Project title">
+                                   <img src="images/menu-image6.jpg" class="img-responsive" alt="">
+
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h3>Big Flat Fried</h3>
+                                             <p>Pepper / Crispy</p>
+                                        </div>
+                                        <div class="menu-price">
+                                             <span>$30</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </div>
+                    </div>
+
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- TESTIMONIAL -->
+     <section id="testimonial" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2>Testimonials</h2>
+                         </div>
+                    </div>  
+
+                    <div class="col-md-offset-2 col-md-8 col-sm-12">
+                         <div class="owl-carousel owl-theme">
+                              <div class="item">
+                                   <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum ullamcorper nulla non.</p>
+                                        <div class="tst-author">
+                                             <h4>Digital Carlson</h4>
+                                             <span>Pharetra quam sit amet</span>
+                                        </div>
+                              </div>
+
+                              <div class="item">
+                                   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed vestibulum orci quam.</p>
+                                        <div class="tst-author">
+                                             <h4>Johnny Stephen</h4>
+                                             <span>Magna nisi porta ligula</span>
+                                        </div>
+                              </div>
+
+                              <div class="item">
+                                   <p>Vivamus aliquet felis eu diam ultricies congue. Morbi porta lorem nec consectetur porta quis dui elit habitant morbi.</p>
+                                        <div class="tst-author">
+                                             <h4>Jessie White</h4>
+                                             <span>Vitae lacinia augue urna quis</span>
+                                        </div>
+                              </div>
+
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>  
+
+
+     <!-- CONTACT -->
+     <section id="contact" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+	<!-- How to change your own map point
+            1. Go to Google Maps
+            2. Click on your location point
+            3. Click "Share" and choose "Embed map" tab
+            4. Copy only URL and paste it within the src="" field below
+	-->
+                    <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
+                         <div id="google-map">
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" allowfullscreen></iframe>
+                         </div>
+                    </div>    
+
+                    <div class="col-md-6 col-sm-12">
+
+                         <div class="col-md-12 col-sm-12">
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                                   <h2>Contact Us</h2>
+                              </div>
+                         </div>
+
+                         <!-- CONTACT FORM -->
+                         <form action="#" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
+
+                              <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
+                              <h6 class="text-success">Your message has been sent successfully.</h6>
+                              
+                              <!-- IF MAIL NOT SENT -->
+                              <h6 class="text-danger">E-mail must be valid and message must be longer than 1 character.</h6>
+
+                              <div class="col-md-6 col-sm-6">
+                                   <input type="text" class="form-control" id="cf-name" name="name" placeholder="Full name">
+                              </div>
+
+                              <div class="col-md-6 col-sm-6">
+                                   <input type="email" class="form-control" id="cf-email" name="email" placeholder="Email address">
+                              </div>
+
+                              <div class="col-md-12 col-sm-12">
+                                   <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject">
+
+                                   <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell about your project"></textarea>
+
+                                   <button type="submit" class="form-control" id="cf-submit" name="submit">Send Message</button>
+                              </div>
+                         </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>          
+
+
+     <!-- FOOTER -->
+     <footer id="footer" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-3 col-sm-8">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Find us</h2>
+                              </div>
+                              <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>123 nulla a cursus rhoncus,<br> augue sem viverra 10870<br>id ultricies sapien</p>
+                              </address>
+                         </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-8">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Reservation</h2>
+                              </div>
+                              <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>090-080-0650 | 090-070-0430</p>
+                                   <p><a href="mailto:info@company.com">info@company.com</a></p>
+                                   <p>LINE: eatery247 </p>
+                              </address>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-8">
+                         <div class="footer-info footer-open-hour">
+                              <div class="section-title">
+                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>
+                              </div>
+                              <div class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>Monday: Closed</p>
+                                   <div>
+                                        <strong>Tuesday to Friday</strong>
+                                        <p>7:00 AM - 9:00 PM</p>
+                                   </div>
+                                   <div>
+                                        <strong>Saturday - Sunday</strong>
+                                        <p>11:00 AM - 10:00 PM</p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4">
+                         <ul class="wow fadeInUp social-icon" data-wow-delay="0.4s">
+                              <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                              <li><a href="#" class="fa fa-twitter"></a></li>
+                              <li><a href="#" class="fa fa-instagram"></a></li>
+                              <li><a href="#" class="fa fa-google"></a></li>
+                         </ul>
+
+                         <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s"> 
+                              <p><br>Copyright &copy; 2018 <br>Your Company Name 
+                              
+                              <br><br>Design: <a rel="nofollow" href="http://templatemo.com" target="_parent">TemplateMo</a></p>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+
 </body>
 </html>
