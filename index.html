@@ -1,1 +1,288 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>লক্ষ্মীপুর সদর তথ্য পোর্টাল</title>
+    <meta name="description" content="লক্ষ্মীপুর সদর উপজেলার জরুরি নম্বর, সেবা, আপডেট, মানচিত্র ও যোগাযোগ—সব এক জায়গায়।" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect rx='10' ry='10' width='48' height='48' fill='%230ea5e9'/%3E%3Cpath fill='white' d='M24 8a14 14 0 100 28 14 14 0 000-28zm0 4a10 10 0 110 20 10 10 0 010-20zm-2 5h4v12h-4V17zm0 14h4v4h-4v-4z'/%3E%3C/svg%3E" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --panel: #ffffff;
+            --muted: #6c757d;
+            --text: #212529;
+            --accent: #007bff;
+            --accent2: #28a745;
+            --warn: #dc3545;
+            --card: #f1f3f5;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', 'Tiro Bangla', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: min(1200px, 95%);
+            margin-inline: auto;
+            padding: 1.5rem 1rem;
+        }
+
+        header.nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--accent);
+        }
+
+        .brand .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .cta {
+            background-color: var(--accent);
+            color: white;
+            border: 0;
+            padding: 0.75rem 1.25rem;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            background-color: #0056b3;
+        }
+
+        main {
+            padding-top: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+            background: linear-gradient(45deg, #007bff, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .card {
+            background-color: var(--panel);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .emergency-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: var(--card);
+            border-radius: 10px;
+        }
+
+        .emergency-item a {
+            text-decoration: none;
+            color: white;
+            background-color: var(--accent2);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--muted);
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="nav" aria-label="প্রধান নেভিগেশন">
+        <div class="nav-inner container">
+            <div class="brand">
+                <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" fill="currentColor"/>
+                </svg>
+                <span>লক্ষ্মীপুর সদর পোর্টাল</span>
+            </div>
+            <a href="https://github.com/ahmedsubel342/lakshmipur-portal" class="cta">GitHub ↗</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>লক্ষ্মীপুর সদর — সব সেবা এক জায়গায়</h1>
+            <p>জরুরি সহায়তা, সরকারি/বেসরকারি সেবা, আপডেট, মানচিত্র ও যোগাযোগ। এই সাইটটি অফলাইন-ফ্রেন্ডলি এবং মোবাইল-ফার্স্ট ডিজাইনে তৈরি।</p>
+        </section>
+
+        <section id="emergency" class="section">
+            <h2 class="section-title">জরুরি নম্বর</h2>
+            <div class="emergency-grid">
+                <div class="card emergency-item">
+                    <div>
+                        <div class="badge">জাতীয়</div>
+                        <h4>জাতীয় জরুরি সেবা</h4>
+                        <p>পুলিশ, ফায়ার সার্ভিস, অ্যাম্বুলেন্স</p>
+                    </div>
+                    <a href="tel:999">কল করুন 999</a>
+                </div>
+                <div class="card emergency-item">
+                    <div>
+                        <div class="badge">জাতীয়</div>
+                        <h4>সরকারি তথ্য ও সেবা</h4>
+                        <p>সিটিজেন সার্ভিস</p>
+                    </div>
+                    <a href="tel:333">কল করুন 333</a>
+                </div>
+                <div class="card emergency-item">
+                    <div>
+                        <div class="badge">জাতীয়</div>
+                        <h4>নারী ও শিশু সহায়তা</h4>
+                        <p>হেল্পলাইন</p>
+                    </div>
+                    <a href="tel:109">কল করুন 109</a>
+                </div>
+                <div class="card emergency-item">
+                    <div>
+                        <div class="badge">জাতীয়</div>
+                        <h4>টোল-ফ্রি স্বাস্থ্য সেবা</h4>
+                        <p>স্বাস্থ্য মন্ত্রণালয়</p>
+                    </div>
+                    <a href="tel:16263">কল করুন 16263</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services">
+            <h2 class="section-title">প্রধান সেবা</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h4>🏥 স্বাস্থ্য সেবা</h4>
+                    <p>হাসপাতাল, ক্লিনিক, ফার্মেসি, অ্যাম্বুলেন্স</p>
+                </div>
+                <div class="card">
+                    <h4>👮‍♂️ নিরাপত্তা ও আইন</h4>
+                    <p>থানা, বিট পুলিশিং, ট্রাফিক</p>
+                </div>
+                <div class="card">
+                    <h4>🔥 দুর্যোগ ব্যবস্থাপনা</h4>
+                    <p>ফায়ার সার্ভিস, সিভিল ডিফেন্স</p>
+                </div>
+                <div class="card">
+                    <h4>🏛️ সরকারি ও প্রশাসনিক</h4>
+                    <p>ইউনিয়ন পরিষদ, পাসপোর্ট, জন্ম নিবন্ধন</p>
+                </div>
+                <div class="card">
+                    <h4>💡 ইউটিলিটি সার্ভিস</h4>
+                    <p>বিদ্যুৎ, গ্যাস, পানি</p>
+                </div>
+                <div class="card">
+                    <h4>🩸 রক্তদান</h4>
+                    <p>ডোনার গ্রুপ, সংগঠন</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="year"></span> লক্ষ্মীপুর সদর তথ্য পোর্টাল • নির্মাণ সহায়তা: আপনার টিম</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
