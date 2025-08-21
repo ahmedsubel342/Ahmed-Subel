@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>লক্ষ্মীপুর সদর তথ্য পোর্টাল</title>
+    <title>লক্ষ্মীপুর সদর তথ্য পোর্টাল - হোম</title>
     <meta name="description" content="লক্ষ্মীপুর সদর উপজেলার জরুরি নম্বর, সেবা, আপডেট, মানচিত্র ও যোগাযোগ—সব এক জায়গায়।" />
     <meta name="theme-color" content="#0ea5e9" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect rx='10' ry='10' width='48' height='48' fill='%230ea5e9'/%3E%3Cpath fill='white' d='M24 8a14 14 0 100 28 14 14 0 000-28zm0 4a10 10 0 110 20 10 10 0 010-20zm-2 5h4v12h-4V17zm0 14h4v4h-4v-4z'/%3E%3C/svg%3E" />
@@ -131,6 +131,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s, box-shadow 0.2s;
             text-align: center;
+            text-decoration: none; /* Make card links look like cards */
+            display: block;
         }
         
         .card:hover {
@@ -174,7 +176,8 @@
         /* --- Slider Styles --- */
         .slider-container {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
+            height: 450px; /* Landscape aspect ratio */
             margin: 2rem auto;
             position: relative;
             overflow: hidden;
@@ -184,11 +187,14 @@
         
         .slider {
             display: flex;
+            height: 100%;
             transition: transform 0.5s ease-in-out;
         }
         
         .slider img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -220,26 +226,11 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
         
-        /* --- Gallery Section --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+        /* --- Other sections styles --- */
+        .text-content {
+            text-align: justify;
         }
         
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
-        
-        /* --- Contact Form --- */
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -285,12 +276,12 @@
 <body>
     <header class="nav" aria-label="প্রধান নেভিগেশন">
         <div class="nav-inner container">
-            <div class="brand">
+            <a href="index.html" class="brand">
                 <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" fill="currentColor"/>
                 </svg>
                 <span>লক্ষ্মীপুর সদর পোর্টাল</span>
-            </div>
+            </a>
             <a href="https://github.com/ahmedsubel342/lakshmipur-portal" class="cta">GitHub ↗</a>
         </div>
     </header>
@@ -323,28 +314,27 @@
         
         <section id="about" class="section">
             <h2 class="section-title">আমাদের সম্পর্কে</h2>
-            <div class="card" style="text-align: justify;">
+            <div class="card text-content">
                 <p>লক্ষ্মীপুর সদর তথ্য পোর্টালটি লক্ষ্মীপুর সদর উপজেলার সকল মানুষের জন্য একটি ডিজিটাল প্ল্যাটফর্ম হিসেবে কাজ করবে। আমাদের লক্ষ্য হলো জরুরি পরিষেবা, সরকারি ও বেসরকারি প্রতিষ্ঠান, স্বাস্থ্যসেবা, শিক্ষা এবং অন্যান্য প্রয়োজনীয় তথ্য একটি সহজলভ্য জায়গায় নিয়ে আসা। এই পোর্টালটি স্থানীয় মানুষকে দ্রুত ও সঠিক তথ্য দিয়ে সহায়তা করার জন্য ডিজাইন করা হয়েছে।</p>
             </div>
         </section>
 
         <section id="gallery" class="section">
             <h2 class="section-title">গ্যালারি</h2>
-            <div class="gallery-grid" id="gallery-list">
+            <p style="text-align: center; color: var(--muted); max-width: 600px; margin: 1rem auto;">লক্ষ্মীপুর সদরের কিছু সুন্দর মুহূর্ত এবং গুরুত্বপূর্ণ স্থানের ছবি</p>
+            <div class="grid-container" id="gallery-list">
                 </div>
         </section>
 
         <section id="contact" class="section">
             <h2 class="section-title">যোগাযোগ</h2>
-            <p style="text-align: center; color: var(--muted);">আমাদের সাথে যোগাযোগ করতে নিচের ফর্মটি ব্যবহার করতে পারেন অথবা সোশ্যাল মিডিয়াতে আমাদের অনুসরণ করুন।</p>
-            <form class="contact-form">
-                <input type="text" placeholder="আপনার নাম" required>
-                <input type="email" placeholder="আপনার ইমেইল" required>
-                <textarea rows="5" placeholder="আপনার বার্তা" required></textarea>
+            <p style="text-align: center; color: var(--muted); max-width: 600px; margin: 1rem auto;">আমাদের সাথে যোগাযোগ করতে নিচের ফর্মটি ব্যবহার করতে পারেন অথবা সোশ্যাল মিডিয়াতে আমাদের অনুসরণ করুন।</p>
+            <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="আপনার নাম" required>
+                <input type="email" name="email" placeholder="আপনার ইমেইল" required>
+                <textarea name="message" rows="5" placeholder="আপনার বার্তা" required></textarea>
                 <button type="submit">পাঠান</button>
             </form>
-            <div class="social-grid">
-                </div>
         </section>
     </main>
     
@@ -363,23 +353,26 @@
         ];
 
         const SERVICES = [
-            { icon: '🏥', title: 'স্বাস্থ্য সেবা', description: 'হাসপাতাল, ক্লিনিক, ফার্মেসি, অ্যাম্বুলেন্স' },
-            { icon: '👮‍♂️', title: 'নিরাপত্তা ও আইন', description: 'থানা, বিট পুলিশিং, ট্রাফিক' },
-            { icon: '🔥', title: 'দুর্যোগ ব্যবস্থাপনা', description: 'ফায়ার সার্ভিস, সিভিল ডিফেন্স' },
-            { icon: '🏛️', title: 'সরকারি ও প্রশাসনিক', description: 'ইউনিয়ন পরিষদ, পাসপোর্ট, জন্ম নিবন্ধন' },
-            { icon: '💡', title: 'ইউটিলিটি সার্ভিস', description: 'বিদ্যুৎ, গ্যাস, পানি' },
-            { icon: '🩸', title: 'রক্তদান', description: 'ডোনার গ্রুপ, সংগঠন' },
+            { icon: '🏥', title: 'স্বাস্থ্য সেবা', description: 'হাসপাতাল, ক্লিনিক', link: 'health.html' },
+            { icon: '👮‍♂️', title: 'নিরাপত্তা ও আইন', description: 'থানা, ট্রাফিক', link: 'security.html' },
+            { icon: '🏛️', title: 'সরকারি ও প্রশাসনিক', description: 'ইউনিয়ন পরিষদ', link: 'administration.html' },
+            { icon: '📚', title: 'শিক্ষা', description: 'স্কুল, কলেজ, মাদ্রাসা', link: 'schools.html' },
+            { icon: '🛒', title: 'ব্যবসা ও দোকান', description: 'গুরুত্বপূর্ণ ব্যবসা, বাজার', link: 'shops.html' },
+            { icon: '🔥', title: 'দুর্যোগ ব্যবস্থাপনা', description: 'ফায়ার সার্ভিস', link: 'disaster.html' },
+            { icon: '💡', title: 'ইউটিলিটি সার্ভিস', description: 'বিদ্যুৎ, পানি, গ্যাস', link: 'utility.html' },
+            { icon: '🩸', title: 'রক্তদান', description: 'ডোনার গ্রুপ, সংগঠন', link: 'blood.html' },
         ];
 
+        // এখানে আপনার স্লাইডারের ছবির লিংকগুলো দিন
         const SLIDER_IMAGES = [
             'https://via.placeholder.com/1200x500/007bff/ffffff?text=লক্ষ্মীপুর+সদর+১',
             'https://via.placeholder.com/1200x500/28a745/ffffff?text=লক্ষ্মীপুর+সদর+২',
             'https://via.placeholder.com/1200x500/dc3545/ffffff?text=লক্ষ্মীপুর+সদর+৩',
-            // এখানে আপনার স্লাইডারের ছবির লিংকগুলো দিন
         ];
         
+        // এখানে আপনার গ্যালারির ছবির লিংকগুলো দিন
         const GALLERY_IMAGES = [
-            'https://github.com/ahmedsubel342/lakshmipur-portal/blob/main/1000129802.jpg',
+            'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+১',
             'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+২',
             'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+৩',
             'https://via.placeholder.com/400x300/e9ecef?text=গ্যালারি+ছবি+৪',
@@ -422,26 +415,25 @@
         function renderServices() {
             const listContainer = document.getElementById('service-list');
             listContainer.innerHTML = SERVICES.map(item => `
-                <div class="card">
+                <a href="${item.link}" class="card">
                     <div class="service-icon">${item.icon}</div>
                     <h4>${item.title}</h4>
                     <p>${item.description}</p>
-                </div>
+                </a>
             `).join('');
         }
         
         function renderGallery() {
             const listContainer = document.getElementById('gallery-list');
             listContainer.innerHTML = GALLERY_IMAGES.map(src => `
-                <div class="gallery-item">
-                    <img src="${src}" alt="গ্যালারি ছবি">
+                <div class="card">
+                    <img src="${src}" alt="গ্যালারি ছবি" style="width: 100%; height: auto; border-radius: 8px;">
                 </div>
             `).join('');
         }
 
         document.getElementById('year').textContent = new Date().getFullYear();
         
-        // Render all content on page load
         document.addEventListener('DOMContentLoaded', () => {
             renderEmergencyNumbers();
             renderServices();
