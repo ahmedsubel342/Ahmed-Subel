@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Theme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to Colorful Theme</h1>
+    <p>This is a simple colorful theme example.</p>
+    <script src="script.js"></script>
+</body>
+</html>
+colorful_theme/style.css
+
+css
+Copy code
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+colorful_theme/script.js
+
+js
+Copy code
+console.log("Colorful theme loaded");
