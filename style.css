@@ -1624,3 +1624,7 @@ a.text-hover:focus:after {
 #preloader, #loading {
     display: none !important;
 }
+/* লোডিং স্ক্রিন/প্রিলোডার দ্রুত বন্ধ করার জন্য কোড */
+#preloader, .preloader, #loading {
+    display: none !important;
+}
