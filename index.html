@@ -1,53 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ElitezMart — হোম</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্মার্ট অনলাইন শপ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="brand"><img src="assets/logo.png" alt="ElitezMart" class="logo">ElitezMart</a>
-      <nav class="main-nav">
-        <a href="index.html">হোম</a>
-        <a href="products.html">প্রোডাক্ট</a>
-        <a href="about.html">আমাদের সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <div style="flex:1">
-        <h1>স্বাগতম ElitezMart — তোমার স্মার্ট অনলাইন মার্কেট</h1>
-        <p>বেস্ট ডিলস, বোল্ড কালার, স্মার্ট প্রোডাক্ট ভিউ — দ্রুত অর্ডার করো।</p>
-        <a class="btn" href="products.html">শপ দেখো</a>
-      </div>
-      <div style="width:320px; text-align:center">
-        <img src="assets/logo.png" alt="logo" style="max-width:160px; opacity:0.98">
-      </div>
+    <header class="main-header">
+        <div class="logo">
+            <img src="আপনার_লোগো.png" alt="Shop Logo" class="logo-img">
+            <h1>শপ বাংলা</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="#">হোম</a>
+            <a href="#products">পণ্যসমূহ</a>
+            <a href="#contact">যোগাযোগ</a>
+            <a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i> (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>আপনার পছন্দের সব পণ্য এক জায়গায়</h2>
+            <p>আধুনিক, ডিজিটাল এবং মানসম্পন্ন সব প্রোডাক্ট!</p>
+            <a href="#products" class="btn">এখনই কেনাকাটা করুন</a>
+        </div>
     </section>
 
-    <section class="features-grid">
-      <div class="fcard f-blue"><div class="ficon">🚚</div><div><h3>দ্রুত ডেলিভারি</h3><p>Same/next-day শহরভিত্তিক ডেলিভারি</p></div></div>
-      <div class="fcard f-green"><div class="ficon">🔒</div><div><h3>নির্ভরযোগ্য পেমেন্ট</h3><p>নিরাপদ ও দ্রুত চেকআউট</p></div></div>
-      <div class="fcard f-yellow"><div class="ficon">💬</div><div><h3>লাইভ সাপোর্ট</h3><p>২৪/৭ চ্যাট ও কল সাপোর্ট</p></div></div>
-      <div class="fcard f-purple"><div class="ficon">⭐</div><div><h3>গুণমান নিশ্চিত</h3><p>রিভিউ ও Q/A চেকিং</p></div></div>
+    <section id="products" class="products-section">
+        <h2 class="section-title">আমাদের বিশেষ পণ্যসমূহ</h2>
+        <div class="product-grid">
+
+            <div class="product-card" data-id="1">
+                <img src="product_image_1.jpg" alt="পণ্য ১">
+                <h3>আল্ট্রা-স্মার্ট ঘড়ি</h3>
+                <p class="price">৳ 2,500</p>
+                <p class="description">লেটেস্ট মডেলের স্মার্ট ওয়াচ।</p>
+                <button class="btn add-to-cart-btn" data-name="আল্ট্রা-স্মার্ট ঘড়ি" data-price="2500">কার্ডে যোগ করুন</button>
+                <button class="btn details-btn" data-id="1">বিস্তারিত দেখুন</button>
+            </div>
+
+            <div class="product-card" data-id="2">
+                <img src="product_image_2.jpg" alt="পণ্য ২">
+                <h3>পাওয়ার ব্যাংক (20000mAh)</h3>
+                <p class="price">৳ 1,800</p>
+                <p class="description">দ্রুত চার্জিং এবং দীর্ঘস্থায়ী ব্যাটারি।</p>
+                <button class="btn add-to-cart-btn" data-name="পাওয়ার ব্যাংক" data-price="1800">কার্ডে যোগ করুন</button>
+                <button class="btn details-btn" data-id="2">বিস্তারিত দেখুন</button>
+            </div>
+            
+            <div class="product-card" data-id="3">
+                <img src="product_image_3.jpg" alt="পণ্য ৩">
+                <h3>ওয়্যারলেস ইয়ারবাড</h3>
+                <p class="price">৳ 1,200</p>
+                <p class="description">ক্রিস্টাল ক্লিয়ার সাউন্ড কোয়ালিটি।</p>
+                <button class="btn add-to-cart-btn" data-name="ওয়্যারলেস ইয়ারবাড" data-price="1200">কার্ডে যোগ করুন</button>
+                <button class="btn details-btn" data-id="3">বিস্তারিত দেখুন</button>
+            </div>
+            
+        </div>
     </section>
 
-    <section id="featured" class="container"></section>
+    <footer class="main-footer" id="contact">
+        <p>&copy; 2024 শপ বাংলা। সর্বস্বত্ব সংরক্ষিত।</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> ElitezMart</p>
+    <div id="product-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-product-name"></h3>
+            <img id="modal-product-image" src="" alt="">
+            <p id="modal-product-price"></p>
+            <p id="modal-product-full-description"></p>
+            <button class="btn add-to-cart-btn-modal" data-id="">এখনই কিনুন</button>
+        </div>
     </div>
-  </footer>
 
-  <script src="js/app.js"></script>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>আপনার শপিং কার্ট</h3>
+            <ul id="cart-items">
+                </ul>
+            <p class="cart-total">মোট: ৳ <span id="cart-total-amount">0</span></p>
+            <button class="btn checkout-btn">অর্ডার নিশ্চিত করুন</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
