@@ -9,7 +9,7 @@ Colors:
 	Dark 		: #15161D ##1E1F29
 	Grey 		: #E4E7ED #FBFBFC #8D99AE #B9BABC
 
-Fonts: Montserrat
+Fonts: Rubik
 
 Table OF Contents
 ------------------------------------
@@ -56,7 +56,7 @@ Table OF Contents
 \*----------------------------*/
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', Rubik;
   font-weight: 400;
   color: #333;
 }
