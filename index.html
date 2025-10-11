@@ -1,44 +1,367 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylish Website - Theme Fix</title>
-    
-    <link href="css/font-awesome.min.css" rel="stylesheet"> 
-    
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-    <link href="css/slick.css" rel="stylesheet">
-    <link href="css/slick-theme.css" rel="stylesheet">
-    
-    <link href="css/style.css" rel="stylesheet"> 
-    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DropShipX — Demo Dropshipping Store</title>
+  <!-- Tailwind CDN for quick styling (production: build with Tailwind) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Complete A→Z dropshipping demo single-file site (HTML/CSS/JS)." />
+  <style>
+    /* Extra small custom styles on top of Tailwind */
+    .product-card:hover { transform: translateY(-6px); }
+    .theme-dark { background-color: #0b1220; color: #e6eef8; }
+    .transition-fast { transition: all .18s ease-in-out; }
+    /* Simple responsive modal image */
+    .modal-img { max-height: 60vh; object-fit: contain; }
+  </style>
 </head>
-<body>
-
-    <header id="main-header">
-        <div class="container">
-            <h1>Welcome to Ahmed Subel Official Website</h1>
-            <p>Your website is now ready to showcase your work.</p>
+<body class="bg-gray-50 text-gray-800 min-h-screen font-sans" data-theme="light">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <a href="#" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-md bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">DS</div>
+            <span class="font-semibold text-lg">DropShipX</span>
+          </a>
+          <nav class="hidden md:flex gap-2 items-center ml-6">
+            <a href="#products" class="text-sm hover:underline">Products</a>
+            <a href="#about" class="text-sm hover:underline">About</a>
+            <a href="#contact" class="text-sm hover:underline">Contact</a>
+          </nav>
         </div>
-    </header>
 
-    <section id="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="feature-box">
-                <img src="images/demo-image.jpg" alt="Demo Image"> 
-                <h3>Modern Design</h3>
-                <p>A clean and responsive layout that looks great on all devices.</p>
-            </div>
+        <div class="flex items-center gap-3">
+          <div class="hidden sm:flex items-center border rounded-lg overflow-hidden">
+            <input id="search" class="px-3 py-2 w-56 outline-none" placeholder="Search products..." />
+            <button id="searchBtn" class="px-3 py-2 bg-indigo-600 text-white">Search</button>
+          </div>
+
+          <button id="themeToggle" title="Toggle theme" class="p-2 rounded-md transition-fast hover:bg-gray-100">
+            🌗
+          </button>
+
+          <button id="cartBtn" class="relative bg-indigo-600 text-white px-3 py-2 rounded-md">Cart <span id="cartCount" class="ml-2 bg-white text-indigo-600 rounded-full px-2 py-0.5 text-xs">0</span></button>
         </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-8">
+      <div class="md:col-span-2">
+        <h1 class="text-4xl font-extrabold">Build your dropshipping store — demo</h1>
+        <p class="mt-4 text-gray-600">A single-file demo with product listing, modal, cart, checkout mock, theme toggle and basic UI. Use for prototyping and GitHub upload.</p>
+
+        <div class="mt-4 flex gap-3">
+          <a href="#products" class="bg-indigo-600 text-white px-4 py-2 rounded-md">Browse Products</a>
+          <button id="importSample" class="border px-4 py-2 rounded-md">Load Sample Catalog</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-4">
+        <h3 class="font-semibold">Fast facts</h3>
+        <ul class="mt-2 text-sm text-gray-600">
+          <li>• Client-only demo (no payment gateway). Use with Shopify/Shopware/Woo for production.</li>
+          <li>• Theme toggle, responsive, search & filters.</li>
+          <li>• Cart stored in localStorage (simple demo).</li>
+        </ul>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Ahmed Subel . All Rights Reserved.</p>
-    </footer>
+    <!-- Product area -->
+    <section id="products">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-semibold">Products</h2>
+        <div class="flex gap-2 items-center">
+          <select id="sort" class="border rounded px-2 py-1">
+            <option value="default">Sort</option>
+            <option value="price-asc">Price: low → high</option>
+            <option value="price-desc">Price: high → low</option>
+            <option value="popular">Popular</option>
+          </select>
+          <select id="category" class="border rounded px-2 py-1">
+            <option value="all">All categories</option>
+            <option value="gadgets">Gadgets</option>
+            <option value="home">Home</option>
+            <option value="fashion">Fashion</option>
+          </select>
+        </div>
+      </div>
 
-    <script src="js/main.js"></script>
-    </body>
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Checkout mockup (non-functional payment) -->
+    <section id="checkoutSection" class="mt-12 bg-white rounded-xl shadow p-6" hidden>
+      <h3 class="text-xl font-semibold">Checkout</h3>
+      <p class="text-sm text-gray-600">This is a demo checkout — integrate a real gateway in production (Stripe, PayPal, Shopify checkout, etc.).</p>
+      <form id="checkoutForm" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input name="firstName" placeholder="First name" required class="border rounded px-3 py-2" />
+        <input name="lastName" placeholder="Last name" required class="border rounded px-3 py-2" />
+        <input name="email" placeholder="Email" type="email" required class="border rounded px-3 py-2 md:col-span-2" />
+        <input name="address" placeholder="Address" required class="border rounded px-3 py-2 md:col-span-2" />
+        <div class="md:col-span-2 flex gap-2 justify-end">
+          <button type="button" id="continueShopping" class="px-4 py-2 border rounded">Continue shopping</button>
+          <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded">Place mock order</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- About & Contact -->
+    <section id="about" class="mt-12">
+      <h3 class="text-xl font-semibold">About DropShipX</h3>
+      <p class="mt-2 text-gray-600">This demo shows the client-side pieces you need. For production you'll wire a backend for suppliers, orders, shipping, and payments.</p>
+    </section>
+
+    <section id="contact" class="mt-8 bg-white p-4 rounded-xl shadow">
+      <h3 class="font-semibold">Contact</h3>
+      <form id="contactForm" class="mt-3 grid grid-cols-1 gap-3 max-w-xl">
+        <input name="name" placeholder="Your name" class="border rounded px-3 py-2" />
+        <input name="email" placeholder="Your email" class="border rounded px-3 py-2" />
+        <textarea name="message" placeholder="Message" class="border rounded px-3 py-2" rows="4"></textarea>
+        <div class="flex gap-2 justify-end">
+          <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-sm text-gray-500">
+      © 2025 DropShipX — demo. Use, modify and upload to GitHub.
+    </footer>
+  </main>
+
+  <!-- Cart slide-over -->
+  <aside id="cartPanel" class="fixed right-0 top-0 h-full w-96 bg-white shadow-lg transform translate-x-full transition-transform z-50">
+    <div class="p-4 flex items-center justify-between border-b">
+      <h3 class="font-semibold">Your Cart (<span id="cartTotalItems">0</span>)</h3>
+      <button id="closeCart">✕</button>
+    </div>
+    <div id="cartItems" class="p-4 space-y-4 overflow-auto h-[70%]"></div>
+    <div class="p-4 border-t">
+      <div class="flex justify-between items-center mb-3">
+        <span class="font-semibold">Total</span>
+        <span id="cartTotalPrice" class="font-bold">$0.00</span>
+      </div>
+      <div class="flex gap-2">
+        <button id="clearCart" class="border px-4 py-2 rounded">Clear</button>
+        <button id="checkoutBtn" class="bg-green-600 text-white px-4 py-2 rounded">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Product modal -->
+  <div id="productModal" class="fixed inset-0 bg-black/40 hidden z-50 items-center justify-center p-4">
+    <div class="bg-white max-w-4xl w-full rounded-xl shadow-lg overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 flex items-center justify-center">
+          <img id="modalImg" src="" alt="" class="modal-img" />
+        </div>
+        <div class="p-6">
+          <h3 id="modalTitle" class="text-2xl font-semibold"></h3>
+          <p id="modalDesc" class="mt-2 text-gray-600"></p>
+          <div class="mt-4">
+            <span class="text-2xl font-bold" id="modalPrice"></span>
+          </div>
+          <div class="mt-4 flex gap-2 items-center">
+            <label>Qty</label>
+            <input id="modalQty" type="number" value="1" min="1" class="border rounded px-2 py-1 w-20" />
+            <button id="addToCartBtn" class="bg-indigo-600 text-white px-4 py-2 rounded">Add to cart</button>
+          </div>
+          <div class="mt-4">
+            <small class="text-gray-500">Category: <span id="modalCat"></span></small>
+          </div>
+          <div class="mt-6 flex gap-2">
+            <button id="closeModal" class="px-3 py-2 border rounded">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sample product data & main JS -->
+  <script>
+    // Simple product catalog demo — replace with API calls in production
+    let PRODUCTS = [];
+
+    const sampleProducts = [
+      { id: 'p1', title: 'Wireless Earbuds', price: 29.99, desc: 'Compact earbuds with charging case.', img: 'https://picsum.photos/seed/earbuds/600/400', category: 'gadgets', popular: 5 },
+      { id: 'p2', title: 'Smart Watch', price: 59.99, desc: 'Fitness watch with heart rate.', img: 'https://picsum.photos/seed/watch/600/400', category: 'gadgets', popular: 8 },
+      { id: 'p3', title: 'Minimalist Lamp', price: 24.5, desc: 'Desk lamp for cozy nights.', img: 'https://picsum.photos/seed/lamp/600/400', category: 'home', popular: 3 },
+      { id: 'p4', title: 'Travel Backpack', price: 39.0, desc: 'Waterproof travel backpack 30L.', img: 'https://picsum.photos/seed/backpack/600/400', category: 'fashion', popular: 7 },
+      { id: 'p5', title: 'Phone Grip', price: 4.99, desc: 'Secure grip for phones.', img: 'https://picsum.photos/seed/grip/600/400', category: 'gadgets', popular: 10 },
+      { id: 'p6', title: 'Ceramic Mug', price: 12.0, desc: 'Handmade feel ceramic mug.', img: 'https://picsum.photos/seed/mug/600/400', category: 'home', popular: 4 },
+      { id: 'p7', title: 'Sunglasses', price: 19.99, desc: 'UV protection sunglasses.', img: 'https://picsum.photos/seed/sung/600/400', category: 'fashion', popular: 6 },
+      { id: 'p8', title: 'LED Strip Light', price: 14.99, desc: 'Color changing LED strip 5m.', img: 'https://picsum.photos/seed/led/600/400', category: 'home', popular: 9 }
+    ];
+
+    // Cart stored in localStorage
+    let CART = JSON.parse(localStorage.getItem('ds_cart') || '[]');
+
+    // Utilities
+    function saveCart() { localStorage.setItem('ds_cart', JSON.stringify(CART)); renderCart(); }
+    function formatPrice(p) { return '$' + p.toFixed(2); }
+
+    // Render products
+    function renderProducts(list) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
+      if (!list.length) { grid.innerHTML = '<div class="text-gray-500">No products found.</div>'; return; }
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card bg-white rounded-xl shadow p-4 transition-fast';
+        card.innerHTML = `
+          <div class="h-52 rounded-md overflow-hidden mb-3"><img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover"></div>
+          <h4 class="font-semibold">${p.title}</h4>
+          <p class="text-sm text-gray-500 mt-1">${p.desc}</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">${formatPrice(p.price)}</div>
+            <div class="flex gap-2">
+              <button data-id="${p.id}" class="viewBtn border px-3 py-1 rounded">View</button>
+              <button data-id="${p.id}" class="quickAdd bg-indigo-600 text-white px-3 py-1 rounded">Add</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Cart UI
+    function renderCart() {
+      document.getElementById('cartCount').textContent = CART.reduce((s,i)=>s+i.qty,0);
+      document.getElementById('cartTotalItems').textContent = CART.reduce((s,i)=>s+i.qty,0);
+      const itemsDiv = document.getElementById('cartItems');
+      itemsDiv.innerHTML = '';
+      let total = 0;
+      CART.forEach(item => {
+        const p = PRODUCTS.find(x => x.id === item.id);
+        if (!p) return;
+        total += p.price * item.qty;
+        const node = document.createElement('div');
+        node.className = 'flex gap-3 items-center';
+        node.innerHTML = `
+          <img src="${p.img}" class="w-16 h-16 object-cover rounded" />
+          <div class="flex-1">
+            <div class="font-semibold">${p.title}</div>
+            <div class="text-sm text-gray-600">${formatPrice(p.price)} × ${item.qty}</div>
+            <div class="mt-2 flex gap-2">
+              <button class="decrease border px-2 py-1" data-id="${p.id}">-</button>
+              <button class="increase border px-2 py-1" data-id="${p.id}">+</button>
+              <button class="remove text-red-600" data-id="${p.id}">Remove</button>
+            </div>
+          </div>
+        `;
+        itemsDiv.appendChild(node);
+      });
+      document.getElementById('cartTotalPrice').textContent = formatPrice(total);
+      localStorage.setItem('ds_cart_total', total);
+    }
+
+    // Add item to cart
+    function addToCart(id, qty=1) {
+      const existing = CART.find(i=>i.id===id);
+      if (existing) existing.qty += qty; else CART.push({id, qty});
+      saveCart();
+    }
+
+    // Quick UI actions
+    document.addEventListener('click', (e) => {
+      if (e.target.matches('.quickAdd')) { const id = e.target.dataset.id; addToCart(id,1); }
+      if (e.target.matches('.viewBtn')) { openProductModal(e.target.dataset.id); }
+      if (e.target.matches('#cartBtn')) { openCart(); }
+      if (e.target.matches('#closeCart')) { closeCart(); }
+      if (e.target.matches('#clearCart')) { CART = []; saveCart(); }
+      if (e.target.matches('#checkoutBtn')) { document.getElementById('checkoutSection').hidden = false; openCart(); }
+      if (e.target.matches('.increase')) { const id=e.target.dataset.id; const it=CART.find(x=>x.id===id); if(it){it.qty++; saveCart();} }
+      if (e.target.matches('.decrease')) { const id=e.target.dataset.id; const it=CART.find(x=>x.id===id); if(it){ it.qty = Math.max(1,it.qty-1); saveCart(); } }
+      if (e.target.matches('.remove')) { const id=e.target.dataset.id; CART = CART.filter(x=>x.id!==id); saveCart(); }
+    });
+
+    // Cart slide functions
+    function openCart(){ document.getElementById('cartPanel').style.transform = 'translateX(0)'; }
+    function closeCart(){ document.getElementById('cartPanel').style.transform = 'translateX(100%)'; }
+
+    // Product modal functions
+    function openProductModal(id) {
+      const p = PRODUCTS.find(x=>x.id===id);
+      if(!p) return;
+      document.getElementById('modalImg').src = p.img;
+      document.getElementById('modalTitle').textContent = p.title;
+      document.getElementById('modalDesc').textContent = p.desc;
+      document.getElementById('modalPrice').textContent = formatPrice(p.price);
+      document.getElementById('modalCat').textContent = p.category;
+      document.getElementById('modalQty').value = 1;
+      document.getElementById('productModal').classList.remove('hidden');
+      document.getElementById('addToCartBtn').dataset.id = p.id;
+    }
+    function closeModal(){ document.getElementById('productModal').classList.add('hidden'); }
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    document.getElementById('productModal').addEventListener('click', (e)=>{ if(e.target.id==='productModal') closeModal(); });
+
+    // Add from modal
+    document.getElementById('addToCartBtn').addEventListener('click', ()=>{
+      const id = document.getElementById('addToCartBtn').dataset.id;
+      const qty = Number(document.getElementById('modalQty').value) || 1;
+      addToCart(id, qty);
+      closeModal();
+      openCart();
+    });
+
+    // Search & filters
+    document.getElementById('searchBtn').addEventListener('click', ()=>{ applyFilters(); });
+    document.getElementById('search').addEventListener('keydown', (e)=>{ if(e.key==='Enter') applyFilters(); });
+    document.getElementById('sort').addEventListener('change', applyFilters);
+    document.getElementById('category').addEventListener('change', applyFilters);
+
+    function applyFilters(){
+      const q = document.getElementById('search').value.toLowerCase().trim();
+      const cat = document.getElementById('category').value;
+      const sort = document.getElementById('sort').value;
+      let out = PRODUCTS.filter(p => (cat==='all' || p.category===cat) && (p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)));
+      if (sort==='price-asc') out.sort((a,b)=>a.price-b.price);
+      if (sort==='price-desc') out.sort((a,b)=>b.price-a.price);
+      if (sort==='popular') out.sort((a,b)=>b.popular-a.popular);
+      renderProducts(out);
+    }
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    function applyTheme(t){ document.body.dataset.theme = t; if(t==='dark'){ document.body.classList.add('theme-dark'); } else { document.body.classList.remove('theme-dark'); } localStorage.setItem('ds_theme', t); }
+    themeToggle.addEventListener('click', ()=>{ const t = localStorage.getItem('ds_theme') === 'dark' ? 'light' : 'dark'; applyTheme(t); });
+
+    // Import sample catalog
+    document.getElementById('importSample').addEventListener('click', ()=>{ PRODUCTS = sampleProducts.slice(); renderProducts(PRODUCTS); saveCart(); });
+
+    // Checkout form (mock)
+    document.getElementById('checkoutForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Order placed (demo). In production, send order to backend / supplier.');
+      CART = []; saveCart(); document.getElementById('checkoutSection').hidden = true; closeCart();
+    });
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', (e)=>{ e.preventDefault(); alert('Message sent (demo). Replace with real email/API in production.'); e.target.reset(); });
+
+    // On page load
+    (function init(){
+      // load theme
+      const t = localStorage.getItem('ds_theme') || 'light'; applyTheme(t);
+      // load products default (sample) so the page isn't empty
+      PRODUCTS = sampleProducts.slice(); renderProducts(PRODUCTS);
+      renderCart();
+      // attach modal close handler also from dynamic code
+      document.querySelectorAll('.viewBtn, .quickAdd').forEach(()=>{});
+    })();
+
+    // Developer notes: 
+    // • For production, replace sampleProducts with API endpoints: fetch('/api/products') etc.
+    // • Use a real backend to store orders and process payments (Stripe, PayPal, or the platform's native checkout).
+    // • Connect to supplier API (AliExpress, CJdropshipping, Spocket) to automate order fulfillment.
+    // • Security: validate all inputs server-side, use HTTPS and secure payment gateways.
+  </script>
+</body>
 </html>
