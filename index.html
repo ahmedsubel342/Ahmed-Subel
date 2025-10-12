@@ -1,183 +1,152 @@
-:root {
-  --bg: #fff;
-  --text: #1f1f1f;
-  --muted: #6b7280;
-  --accent: #ff4ba8;
-  --accent2: #ff77c8;
-  --radius: 16px;
-  --shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElitezMart — Smart Shopping for Everyone 💖</title>
 
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="elitezmart-style.css" />
+</head>
 
-/* HEADER */
-.header {
-  position: sticky;
-  top: 0;
-  background: white;
-  box-shadow: var(--shadow);
-  z-index: 10;
-}
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-}
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-.nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 500;
-  transition: 0.3s;
-}
-.nav a:hover {
-  color: var(--accent);
-}
-.nav i {
-  margin-right: 6px;
-  font-size: 1.1rem;
-}
+<body>
 
-/* HERO SLIDER */
-.hero {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  height: 420px;
-}
-.slider {
-  position: relative;
-  height: 100%;
-}
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-.slide.active {
-  opacity: 1;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-}
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-.hero-text h1 span {
-  color: var(--accent2);
-}
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-.btn {
-  background: linear-gradient(45deg, var(--accent), var(--accent2));
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform 0.2s;
-}
-.btn:hover {
-  transform: scale(1.05);
-}
+  <!-- 🌸 HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo"><i class="fa-solid fa-bag-shopping"></i> ElitezMart</div>
+      <nav class="nav">
+        <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#features"><i class="fa-solid fa-star"></i> Features</a>
+        <a href="#products"><i class="fa-solid fa-box"></i> Products</a>
+        <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
 
-/* FEATURES */
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: 50px auto;
-  max-width: 1100px;
-}
-.feature-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-align: center;
-  width: 300px;
-}
-.feature-card i {
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.feature-card h3 {
-  color: var(--accent2);
-}
+  <!-- 🌈 HERO SLIDER -->
+  <section id="home" class="hero">
+    <div class="slider">
+      <div class="slide active"><img src="assets/cover1.jpg" alt="Slider 1"></div>
+      <div class="slide"><img src="assets/cover2.jpg" alt="Slider 2"></div>
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>Welcome to <span>ElitezMart</span></h1>
+        <p>Where Style Meets Smart Shopping 💖</p>
+        <button class="btn">Shop Now</button>
+      </div>
+    </div>
+  </section>
 
-/* PRODUCTS */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 0 20px;
-}
-.product-card {
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-.product-card:hover {
-  transform: translateY(-5px);
-}
-.product-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-.product-card .info {
-  padding: 20px;
-}
-.price {
-  color: var(--accent);
-  font-weight: 600;
-  margin: 10px 0;
-}
+  <!-- 💎 FEATURES -->
+  <section id="features" class="features">
+    <h2 class="section-title">Why Choose ElitezMart?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="fa-solid fa-truck-fast fa-3x"></i>
+        <h3>Fast Shipping</h3>
+        <p>Lightning quick delivery to your doorstep!</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-lock fa-3x"></i>
+        <h3>Secure Payment</h3>
+        <p>Pay confidently using Stripe or PayPal.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-headset fa-3x"></i>
+        <h3>24/7 Support</h3>
+        <p>We’re always here to assist you, day and night.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-tags fa-3x"></i>
+        <h3>Best Deals</h3>
+        <p>Unbeatable prices and exclusive offers daily!</p>
+      </div>
+    </div>
+  </section>
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
+  <!-- 🛍️ PRODUCTS -->
+  <section id="products" class="products">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="assets/product1.jpg" alt="Smart Watch">
+        <div class="info">
+          <h3>Smart Watch</h3>
+          <p>Elegant design, full feature smartwatch.</p>
+          <div class="price">$49.99</div>
+          <button class="btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/product2.jpg" alt="Wireless Earbuds">
+        <div class="info">
+          <h3>Wireless Earbuds</h3>
+          <p>Crystal clear sound with long battery life.</p>
+          <div class="price">$39.99</div>
+          <button class="btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/product3.jpg" alt="Stylish Backpack">
+        <div class="info">
+          <h3>Stylish Backpack</h3>
+          <p>Durable & perfect for daily use.</p>
+          <div class="price">$29.99</div>
+          <button class="btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/product4.jpg" alt="Wireless Keyboard">
+        <div class="info">
+          <h3>Wireless Keyboard</h3>
+          <p>Smooth typing experience with RGB lights.</p>
+          <div class="price">$34.99</div>
+          <button class="btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 💌 NEWSLETTER -->
+  <section class="newsletter">
+    <h2>Subscribe for Exclusive Offers</h2>
+    <p>Join 10,000+ happy customers & never miss a deal!</p>
+    <div class="subscribe-box">
+      <input type="email" placeholder="Enter your email" />
+      <button>Subscribe</button>
+    </div>
+  </section>
+
+  <!-- 📞 FOOTER -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3><i class="fa-solid fa-bag-shopping"></i> ElitezMart</h3>
+        <p>Your trusted B2C store for stylish essentials.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <p class="copyright">© 2025 ElitezMart. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
