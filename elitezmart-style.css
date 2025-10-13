@@ -63,25 +63,6 @@ body {
   margin: 50px 0;
 }
 
-#ahmedSubelBtn {
-  background: linear-gradient(90deg, #ff77b0, #ff4b9a);
-  color: #fff;
-  padding: 12px 25px;
-  font-size: 1.2rem;
-  border: 3px solid #ff4b9a; /* Bold pink border */
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 700; /* Bold text */
-  transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s;
-}
-
-#ahmedSubelBtn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-  box-shadow: 0 0 15px rgba(255,119,176,0.6); /* subtle glow on hover */
-}
-
-
 .nav {
   display: flex;
   gap: 20px;
@@ -320,4 +301,59 @@ footer {
   color: var(--muted);
   font-size: 0.9rem;
   margin-top: 60px;
+}
+
+.custom-button-section {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+/* Base Style */
+#ahmedSubelBtn {
+  background: linear-gradient(90deg, #ff77b0, #ff4b9a);
+  color: #fff;
+  padding: 14px 35px;
+  font-size: 1.3rem;
+  border: 3px solid #ff4b9a;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glowing border animation */
+#ahmedSubelBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: all 0.4s ease;
+}
+
+/* Hover animation */
+#ahmedSubelBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 75, 154, 0.7);
+}
+
+/* Shine animation moves across button */
+#ahmedSubelBtn:hover::before {
+  left: 100%;
+}
+
+/* Optional continuous glow animation */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 75, 154, 0.7); }
+  100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
+}
+#ahmedSubelBtn {
+  animation: pulseGlow 2s infinite;
 }
