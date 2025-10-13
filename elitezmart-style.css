@@ -357,3 +357,51 @@ footer {
 #ahmedSubelBtn {
   animation: pulseGlow 2s infinite;
 }
+
+/* 🔸 Become a Seller Button Animation 🔸 */
+.animated-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff77b0, #ff4b9a);
+  color: #fff;
+  padding: 14px 35px;
+  font-size: 1.2rem;
+  border: 3px solid #ff4b9a;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  animation: pulseGlow 2s infinite;
+}
+
+/* Hover shine animation */
+.animated-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: all 0.4s ease;
+}
+
+.animated-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 75, 154, 0.7);
+}
+
+.animated-btn:hover::before {
+  left: 100%;
+}
+
+/* Reuse same glowing pulse animation */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 75, 154, 0.7); }
+  100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
+}
+
