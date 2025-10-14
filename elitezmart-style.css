@@ -405,3 +405,125 @@ footer {
   100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Subel - Profile</title>
+  <link rel="stylesheet" href="elitezmart-style.css" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile-header {
+      width: 100%;
+      height: 350px;
+      background: url("assets/ahmed-cover.jpg") center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(255, 75, 154, 0.3);
+      width: 90%;
+      max-width: 700px;
+      margin: -80px auto 40px;
+      text-align: center;
+      border: 3px solid #ff4b9a;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #ff4b9a;
+      object-fit: cover;
+      margin-top: -70px;
+      background-color: #fff;
+    }
+
+    .profile-card h2 {
+      margin: 15px 0 10px;
+      color: #ff4b9a;
+      font-weight: 700;
+    }
+
+    .profile-info {
+      text-align: left;
+      margin-top: 25px;
+      line-height: 1.8;
+    }
+
+    .profile-info p {
+      font-size: 1.1rem;
+      border-bottom: 1px dashed #ffb3d2;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: linear-gradient(90deg, #ff77b0, #ff4b9a);
+      color: #fff;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 3px solid #ff4b9a;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulseGlow 2s infinite;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 75, 154, 0.6);
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(255, 75, 154, 0.7); }
+      100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cover Image -->
+  <div class="profile-header"></div>
+
+  <!-- Profile Card -->
+  <div class="profile-card">
+    <img src="assets/ahmed-photo.jpg" alt="Ahmed Subel" class="profile-img" />
+    <h2>Ahmed Subel</h2>
+    <p><strong>Founder of ElitezMart</strong></p>
+
+    <div class="profile-info">
+      <p><strong>Full Name:</strong> Ahmed Subel</p>
+      <p><strong>Email:</strong> ahmedsubel@email.com</p>
+      <p><strong>Phone:</strong> +8801XXXXXXXXX</p>
+      <p><strong>Location:</strong> Dhaka, Bangladesh</p>
+      <p><strong>Bio:</strong> Passionate about eCommerce, dropshipping & creative web design. Building ElitezMart for modern online sellers.</p>
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>
+
