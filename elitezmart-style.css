@@ -402,3 +402,92 @@ footer {
   50% { box-shadow: 0 0 20px rgba(255, 75, 154, 0.7); }
   100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
 }
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  text-align: center;
+  padding-top: 100px;
+}
+
+/* Ahmed Button */
+.ahmed-btn {
+  background: linear-gradient(90deg, #ff77b0, #ff4b9a);
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px;
+}
+.ahmed-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,75,154,0.6);
+}
+
+/* Imran Button */
+.imran-btn {
+  background: linear-gradient(90deg, #6a5acd, #483d8b);
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px;
+}
+.imran-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(106,90,205,0.6);
+}
+
+/* Common Page Style */
+.ahmed-header, .imran-header {
+  text-align: center;
+}
+
+.ahmed-cover, .imran-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.ahmed-info, .imran-info {
+  margin-top: -70px;
+  display: inline-block;
+  background: white;
+  border: 3px solid #ff4b9a;
+  border-radius: 15px;
+  padding: 30px 50px;
+  box-shadow: 0 0 15px rgba(255,75,154,0.4);
+}
+
+.imran-info {
+  border: 3px solid #6a5acd;
+  box-shadow: 0 0 15px rgba(106,90,205,0.4);
+}
+
+.ahmed-photo, .imran-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: -70px;
+  background: white;
+  border: 3px solid #ff4b9a;
+}
+
+.imran-photo {
+  border: 3px solid #6a5acd;
+}
+
+.bio {
+  margin-top: 15px;
+  border-top: 1px dashed #ddd;
+  padding-top: 10px;
+}
