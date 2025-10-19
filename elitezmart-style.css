@@ -354,8 +354,6 @@ footer {
   50% { box-shadow: 0 0 20px rgba(255, 75, 154, 0.7); }
   100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
 }
-#ahmedSubelBtn {
-  animation: pulseGlow 2s infinite;
 }
 
 /* 🔸 Become a Seller Button Animation 🔸 */
@@ -404,97 +402,3 @@ footer {
   50% { box-shadow: 0 0 20px rgba(255, 75, 154, 0.7); }
   100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
 }
-
-/* ===== Ahmed Subel Popup Modal ===== */
-
-.ahmed-btn {
-  background: linear-gradient(90deg, #ff77b0, #ff4b9a);
-  color: white;
-  padding: 15px 40px;
-  font-size: 20px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  animation: pulseGlow 2s infinite;
-}
-
-.ahmed-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 75, 154, 0.6);
-}
-
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(255, 75, 154, 0.7); }
-  100% { box-shadow: 0 0 10px rgba(255, 75, 154, 0.3); }
-}
-
-/* Modal Background */
-.ahmed-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.ahmed-modal.show {
-  display: flex;
-}
-
-/* Modal Content Box */
-.ahmed-content {
-  background: white;
-  border: 3px solid #ff4b9a;
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 500px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(255, 75, 154, 0.4);
-  animation: popIn 0.4s ease;
-  position: relative;
-}
-
-@keyframes popIn {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* Profile Picture */
-.ahmed-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #ff4b9a;
-  margin-bottom: 15px;
-  object-fit: cover;
-}
-
-/* Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 30px;
-  color: #ff4b9a;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.close:hover {
-  color: #d40070;
-}
-
-/* Bio Text */
-.bio {
-  border-top: 1px dashed #ffb3d2;
-  padding-top: 10px;
-  margin-top: 10px;
-}
-
