@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ElitezMart - Smart Online Store</title>
-  <link rel="stylesheet" href="elitezmart-style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElitezMart - Smart & Stylish Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,123 +13,107 @@
   <!-- 🔹 HEADER -->
   <header class="header">
     <div class="logo">
-      <img src="assets/logo.png" alt="ElitezMart Logo" />
+      <img src="assets/logo.png" alt="ElitezMart Logo">
       <h1>ElitezMart</h1>
     </div>
     <nav>
       <ul>
         <li><a href="#hero">Home</a></li>
         <li><a href="#categories">Categories</a></li>
+        <li><a href="#hot">Hot Deals</a></li>
         <li><a href="#products">Products</a></li>
-        <li><a href="#offers">Offers</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-<!-- <a href="ahmed-subel.html" class="animated-btn">Ahmed Subel</a> -->
-    
-  <a href="seller.html" class="animated-btn">Become a Seller</a>
-  
-  <!-- 🔹 HERO SECTION -->
+  <!-- 🔹 HERO SLIDER -->
   <section id="hero" class="hero">
-    <div class="hero-text">
-      <h2>Welcome to <span>ElitezMart</span></h2>
-      <p>Your One Stop Smart Dropshipping Platform</p>
-      <button onclick="window.location.href='become-seller.html'">Start Selling</button>
-    </div>
-  </section>
-
-  <!-- 🔹 CATEGORY SECTION -->
-  <section id="categories" class="categories">
-    <h2>Shop by Categories</h2>
-    <div class="category-container">
-      <div class="category-box"><i class="fas fa-tshirt"></i><h3>Fashion</h3></div>
-      <div class="category-box"><i class="fas fa-laptop"></i><h3>Electronics</h3></div>
-      <div class="category-box"><i class="fas fa-home"></i><h3>Home & Living</h3></div>
-      <div class="category-box"><i class="fas fa-baby"></i><h3>Kids & Toys</h3></div>
-      <div class="category-box"><i class="fas fa-heart"></i><h3>Beauty</h3></div>
-    </div>
-  </section>
-
-  <!-- 🔹 FEATURED PRODUCTS -->
-  <section id="products" class="products">
-    <h2>Featured Products</h2>
-    <div class="product-container">
-      <div class="product-card">
-        <img src="assets/product1.jpg" alt="Product 1" />
-        <h3>Stylish Watch</h3>
-        <p class="price">৳1200</p>
-        <button>Add to Cart</button>
+    <div class="slider">
+      <div class="slide fade">
+        <img src="assets/hero1.jpg" alt="Hero 1">
+        <div class="caption">Welcome to <span>ElitezMart</span></div>
       </div>
-      <div class="product-card">
-        <img src="assets/product2.jpg" alt="Product 2" />
-        <h3>Smart Earbuds</h3>
-        <p class="price">৳950</p>
-        <button>Add to Cart</button>
+      <div class="slide fade">
+        <img src="assets/hero2.jpg" alt="Hero 2">
+        <div class="caption">Smart Shopping, Better Life!</div>
       </div>
-      <div class="product-card">
-        <img src="assets/product3.jpg" alt="Product 3" />
-        <h3>Silk Saree</h3>
-        <p class="price">৳1850</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/product4.jpg" alt="Product 4" />
-        <h3>Mini Blender</h3>
-        <p class="price">৳1450</p>
-        <button>Add to Cart</button>
+      <div class="slide fade">
+        <img src="assets/hero3.jpg" alt="Hero 3">
+        <div class="caption">Your Dropship Partner in Success!</div>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 FLASH SALE / OFFER -->
-  <section id="offers" class="offers">
-    <h2>🔥 Flash Sale - Up to 50% OFF</h2>
-    <div class="offer-banner">
-      <img src="assets/offer-banner.jpg" alt="Offer Banner" />
-      <div class="offer-text">
-        <h3>Biggest Discount of the Month!</h3>
-        <button>Shop Now</button>
-      </div>
+  <!-- 🔹 FEATURE BUTTONS -->
+  <section class="team-section">
+    <h2>Our Team</h2>
+    <div class="button-container">
+      <button class="btn-subel">Ahmed Subel</button>
+      <button class="btn-imran">Hossain Imran</button>
     </div>
   </section>
 
-  <!-- 🔹 TESTIMONIALS -->
-  <section id="testimonials" class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-container">
-      <div class="testimonial">
-        <p>"Best dropshipping site! Fast delivery and great products."</p>
-        <h4>- Jannat Ara Mim</h4>
-      </div>
-      <div class="testimonial">
-        <p>"Their product quality and service are outstanding!"</p>
-        <h4>- Imran Hossain</h4>
-      </div>
-      <div class="testimonial">
-        <p>"I love how easy it is to manage orders here. Recommended!"</p>
-        <h4>- Rakib Hasan</h4>
-      </div>
+  <!-- 🔹 HOT SELLING -->
+  <section id="hot" class="section hot">
+    <h2>🔥 Hot Selling Products</h2>
+    <div class="card-container">
+      <div class="card"><img src="assets/product1.jpg"><h3>Stylish Watch</h3><p>৳1200</p></div>
+      <div class="card"><img src="assets/product2.jpg"><h3>Smart Earbuds</h3><p>৳950</p></div>
+      <div class="card"><img src="assets/product3.jpg"><h3>Silk Saree</h3><p>৳1850</p></div>
+      <div class="card"><img src="assets/product4.jpg"><h3>Mini Blender</h3><p>৳1450</p></div>
     </div>
   </section>
 
-  <!-- 🔹 NEWSLETTER -->
-  <section class="newsletter">
-    <h2>Join Our Newsletter</h2>
-    <p>Get updates on new arrivals and special discounts</p>
-    <form>
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
+  <!-- 🔹 NEW PRODUCTS -->
+  <section class="section new">
+    <h2>🆕 New Arrivals</h2>
+    <div class="card-container">
+      <div class="card"><img src="assets/new1.jpg"><h3>Fashion Hoodie</h3><p>৳1150</p></div>
+      <div class="card"><img src="assets/new2.jpg"><h3>Power Bank</h3><p>৳850</p></div>
+      <div class="card"><img src="assets/new3.jpg"><h3>Leather Wallet</h3><p>৳650</p></div>
+      <div class="card"><img src="assets/new4.jpg"><h3>Stylish Bag</h3><p>৳1200</p></div>
+    </div>
+  </section>
+
+  <!-- 🔹 READY FOR BOOST -->
+  <section class="section boost">
+    <h2>🚀 Ready for Boost</h2>
+    <p>Find the most trending products to scale your online business fast.</p>
+    <div class="boost-container">
+      <div class="boost-item"><img src="assets/boost1.jpg"><h3>Wireless Speaker</h3></div>
+      <div class="boost-item"><img src="assets/boost2.jpg"><h3>Makeup Kit</h3></div>
+      <div class="boost-item"><img src="assets/boost3.jpg"><h3>Men’s Sunglass</h3></div>
+    </div>
+  </section>
+
+  <!-- 🔹 SEASONAL -->
+  <section class="section season">
+    <h2>☀️ Summer Collection & ❄️ Winter Special</h2>
+    <div class="season-container">
+      <div class="season-box summer"><h3>Summer Vibes</h3></div>
+      <div class="season-box winter"><h3>Winter Warmth</h3></div>
+    </div>
   </section>
 
   <!-- 🔹 FOOTER -->
   <footer id="contact">
-    <p>📞 Contact us: 01762287557 |
-    <p>© 2025 ElitezMart. All rights reserved.</p>
+    <p>📞 01976-367981 | 🌐 selfshop.com.bd</p>
+    <p>© 2025 ElitezMart. Designed with 💖 by Ahmed Subel</p>
   </footer>
 
+  <script>
+    // 🔸 Slider Script
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000);
+    }
+  </script>
 </body>
 </html>
