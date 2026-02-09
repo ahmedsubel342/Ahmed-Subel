@@ -1,66 +1,307 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>বন্ধুর পরিচয়পত্র</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 6px solid white;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-        h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-        }
-        .tagline {
-            font-size: 1.3em;
-            opacity: 0.9;
-        }
-        .content {
-            padding: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        .section {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 5px solid #4facfe;
-        }
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .contact-info {
-            grid-column: span 2;
-            text-align: center;
-            background: #e3f2fd;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Subel | Manager at SelfShop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Ahmed<span>Subel</span></a>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#projects"><i class="fas fa-rocket"></i> Future Projects</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h3 class="hero-subtitle">Welcome to My Professional Space</h3>
+                    <h1 class="hero-title">I'm <span class="highlight">Ahmed Subel</span></h1>
+                    <h2 class="hero-role">Manager at <span class="company">SelfShop</span> & Founder of <span class="company">ElightMart</span></h2>
+                    <p class="hero-desc">E-commerce Specialist | Team Leader | Business Strategist</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
+                        <a href="#projects" class="btn-secondary"><i class="fas fa-rocket"></i> Future Projects</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ahmed Subel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>My Mission</h3>
+                    <p>To revolutionize e-commerce through innovative strategies and exceptional team leadership at SelfShop while building ElightMart into a premier online destination.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>E-commerce Management, Team Leadership, Business Development, Digital Marketing, Customer Relationship Management, Strategic Planning</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Achievements</h3>
+                    <p>Successfully managed 50+ team members at SelfShop. Grew ElightMart from startup to profitable venture. Increased SelfShop revenue by 45% in 2 years.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Educational <span>Background</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2016 - 2018</div>
+                    <div class="timeline-content">
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <p class="institution">Dhaka College</p>
+                        <p>Science Group | GPA: 5.00</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2014 - 2016</div>
+                    <div class="timeline-content">
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <p class="institution">Motijheel Government Boys' High School</p>
+                        <p>Science Group | GPA: 5.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional <span>Experience</span></h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <h3>Manager</h3>
+                            <p class="company-name">SelfShop E-commerce</p>
+                            <p class="duration">2021 - Present</p>
+                        </div>
+                    </div>
+                    <ul class="exp-details">
+                        <li><i class="fas fa-check"></i> Lead team of 50+ professionals</li>
+                        <li><i class="fas fa-check"></i> Increased revenue by 45%</li>
+                        <li><i class="fas fa-check"></i> Implemented new CRM system</li>
+                        <li><i class="fas fa-check"></i> Developed vendor partnerships</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div>
+                            <h3>Founder & CEO</h3>
+                            <p class="company-name">ElightMart</p>
+                            <p class="duration">2020 - Present</p>
+                        </div>
+                    </div>
+                    <ul class="exp-details">
+                        <li><i class="fas fa-check"></i> Built company from ground up</li>
+                        <li><i class="fas fa-check"></i> 5000+ monthly active customers</li>
+                        <li><i class="fas fa-check"></i> Expanded to 3 major cities</li>
+                        <li><i class="fas fa-check"></i> Awarded "Best Startup 2022"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Projects Section -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Future <span>Projects & Initiatives</span></h2>
+            <p class="section-subtitle">Click on any project to explore detailed information</p>
+            
+            <div class="projects-grid">
+                <button class="project-card" onclick="showProject('ai-shopping')">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Shopping Assistant</h3>
+                    <p>AI-powered personal shopping assistant using machine learning</p>
+                    <div class="project-tags">
+                        <span>AI/ML</span>
+                        <span>E-commerce</span>
+                    </div>
+                </button>
+                
+                <button class="project-card" onclick="showProject('blockchain')">
+                    <div class="project-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Blockchain Payment System</h3>
+                    <p>Secure decentralized payment gateway for e-commerce</p>
+                    <div class="project-tags">
+                        <span>Blockchain</span>
+                        <span>FinTech</span>
+                    </div>
+                </button>
+                
+                <button class="project-card" onclick="showProject('ar-shopping')">
+                    <div class="project-icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3>AR Shopping Experience</h3>
+                    <p>Augmented Reality for virtual product try-ons</p>
+                    <div class="project-tags">
+                        <span>AR/VR</span>
+                        <span>Mobile App</span>
+                    </div>
+                </button>
+                
+                <button class="project-card" onclick="showProject('eco-delivery')">
+                    <div class="project-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly Delivery</h3>
+                    <p>Green logistics with electric vehicles</p>
+                    <div class="project-tags">
+                        <span>Sustainability</span>
+                        <span>Logistics</span>
+                    </div>
+                </button>
+                
+                <button class="project-card" onclick="showProject('smart-inventory')">
+                    <div class="project-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Smart Inventory System</h3>
+                    <p>IoT-based real-time inventory management</p>
+                    <div class="project-tags">
+                        <span>IoT</span>
+                        <span>Automation</span>
+                    </div>
+                </button>
+                
+                <button class="project-card" onclick="showProject('global-expansion')">
+                    <div class="project-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3>Global Expansion</h3>
+                    <p>Taking SelfShop to international markets</p>
+                    <div class="project-tags">
+                        <span>International</span>
+                        <span>Business</span>
+                    </div>
+                </button>
+            </div>
+            
+            <!-- Project Details Modal -->
+            <div id="projectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <div id="modalBody">
+                        <!-- Content will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>ahmed.subel@selfshop.com</p>
+                            <p>ceo@elightmart.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+880 17XX XXXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <h3>Send Message</h3>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ahmed Subel. All Rights Reserved.</p>
+            <p>Manager at SelfShop | Founder & CEO of ElightMart</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
