@@ -357,3 +357,47 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+// FAQ Functionality
+function initializeFAQ() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            // Toggle active class on question
+            question.classList.toggle('active');
+            
+            // Get the answer element
+            const answer = question.nextElementSibling;
+            
+            // Toggle answer visibility
+            if (question.classList.contains('active')) {
+                answer.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.classList.remove('active');
+                answer.style.maxHeight = null;
+            }
+            
+            // Close other open FAQs
+            faqQuestions.forEach(otherQuestion => {
+                if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                    otherQuestion.classList.remove('active');
+                    const otherAnswer = otherQuestion.nextElementSibling;
+                    otherAnswer.classList.remove('active');
+                    otherAnswer.style.maxHeight = null;
+                }
+            });
+        });
+    });
+    
+    // Open first FAQ by default
+    if (faqQuestions.length > 0) {
+        faqQuestions[0].classList.add('active');
+        const firstAnswer = faqQuestions[0].nextElementSibling;
+        firstAnswer.classList.add('active');
+        firstAnswer.style.maxHeight = firstAnswer.scrollHeight + "px";
+    }
+}
+
+// Initialize FAQ when page loads
+document.addEventListener('DOMContentLoaded', initializeFAQ);
